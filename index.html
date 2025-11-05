@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nery Veículos - Seminovos e Usados</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nery Veículos - Seminovos e Usados</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
         body {
             box-sizing: border-box;
         }
@@ -368,605 +368,451 @@
             right: 20px;
         }
     </style>
-</head>
-<body class="bg-black text-white scroll-smooth">
-    <!-- Header -->
-    <header id="navbar" class="fixed top-0 w-full bg-black/95 backdrop-blur-sm z-50 border-b border-gray-800 transition-all duration-300">
-        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-            <div class="flex items-center space-x-4">
-                <div class="w-20 h-20 flex items-center justify-center">
-                    <img src="https://i.imgur.com/vNuK6vp.png" alt="Nery Veículos" class="w-full h-full object-contain" onerror="this.src=''; this.alt='Logo não disponível'; this.style.display='none';">
-                </div>
-            </div>
-            
-            <nav class="hidden md:flex space-x-8">
-                <a href="#home" class="hover:text-red-400 transition-colors">Home</a>
-                <a href="#estoque" class="hover:text-red-400 transition-colors">Estoque</a>
-                <a href="#financiamento" class="hover:text-red-400 transition-colors">Financiamento</a>
-                <a href="#contato" class="hover:text-red-400 transition-colors">Contato</a>
-            </nav>
-            
-            <button onclick="openWhatsApp()" class="gradient-blue text-white px-8 py-3 rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-xl">
-                Consultor Exclusivo
-            </button>
-            
-            <!-- Mobile Menu Button -->
-            <button class="md:hidden text-white" onclick="toggleMobileMenu()">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-black/95 border-t border-gray-800">
-            <nav class="container mx-auto px-4 py-4 flex flex-col space-y-4">
-                <a href="#home" class="hover:text-red-400 transition-colors" onclick="toggleMobileMenu()">Home</a>
-                <a href="#estoque" class="hover:text-red-400 transition-colors" onclick="toggleMobileMenu()">Estoque</a>
-                <a href="#financiamento" class="hover:text-red-400 transition-colors" onclick="toggleMobileMenu()">Financiamento</a>
-                <a href="#contato" class="hover:text-red-400 transition-colors" onclick="toggleMobileMenu()">Contato</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Fade Banner -->
-    <div class="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 text-white py-4 banner-container relative shadow-lg">
-        <div class="banner-item">
-            <i class="fas fa-star banner-icon text-yellow-400"></i>
-            <span>FINANCIAMENTO APROVADO EM 24H</span>
-        </div>
-        <div class="banner-item">
-            <i class="fas fa-shield-alt banner-icon text-green-400"></i>
-            <span>GARANTIA DE PROCEDÊNCIA</span>
-        </div>
-        <div class="banner-item">
-            <i class="fas fa-handshake banner-icon text-yellow-400"></i>
-            <span>MELHOR PREÇO GARANTIDO</span>
-        </div>
-        <div class="banner-item">
-            <i class="fab fa-whatsapp banner-icon text-green-400"></i>
-            <span>ATENDIMENTO 24/7</span>
-        </div>
-        <div class="banner-item">
-            <i class="fas fa-car banner-icon text-red-400"></i>
-            <span>VEÍCULOS REVISADOS</span>
-        </div>
-        <div class="banner-item">
-            <i class="fas fa-percentage banner-icon text-yellow-400"></i>
-            <span>TAXAS A PARTIR DE 1,2%</span>
-        </div>
-        <div class="banner-item">
-            <i class="fas fa-tools banner-icon text-blue-300"></i>
-            <span>MANUTENÇÃO GARANTIDA</span>
-        </div>
-        <div class="banner-item">
-            <i class="fas fa-medal banner-icon text-yellow-400"></i>
-            <span>QUALIDADE CERTIFICADA</span>
-        </div>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="bg-black text-white scroll-smooth"><!-- Header -->
+  <header id="navbar" class="fixed top-0 w-full bg-black/95 backdrop-blur-sm z-50 border-b border-gray-800 transition-all duration-300">
+   <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <div class="flex items-center space-x-4">
+     <div class="w-20 h-20 flex items-center justify-center"><img src="https://i.imgur.com/vNuK6vp.png" alt="Nery Veículos" class="w-full h-full object-contain" onerror="this.src=''; this.alt='Logo não disponível'; this.style.display='none';">
+     </div>
     </div>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero-bg min-h-full flex items-center justify-center text-center py-20 md:py-32 relative overflow-hidden bg-black">
-        <!-- Banner de imagens individuais -->
-        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-            <div class="banner-image-container active">
-                <img src="https://imgur.com/NOJ5A5D.jpg" alt="Banner 1" class="banner-image" onerror="this.style.display='none';">
-            </div>
-            <div class="banner-image-container">
-                <img src="https://imgur.com/M0Osgwg.jpg" alt="Banner 2" class="banner-image" onerror="this.style.display='none';">
-            </div>
-            
-            <!-- Setas de navegação do banner - ocultas no mobile -->
-            <button onclick="changeBannerImage('prev')" class="banner-nav banner-nav-left hidden md:flex">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button onclick="changeBannerImage('next')" class="banner-nav banner-nav-right hidden md:flex">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-        </div>
-        
-        <!-- Overlay escuro para melhor legibilidade do texto -->
-        <div class="absolute top-0 left-0 w-full h-full bg-black/20 z-5"></div>
-        
-        <!-- Conteúdo principal do hero -->
-        <div class="relative z-10 px-4 max-w-4xl mx-auto">
-        </div>
-        
-        <!-- Automotive floating elements - reduzidos no mobile -->
-        <div class="absolute top-20 left-4 md:left-10 w-6 h-6 md:w-8 md:h-8 border-2 border-blue-400 rounded-full opacity-40 animate-pulse flex items-center justify-center">
-            <div class="w-1 h-1 md:w-2 md:h-2 bg-blue-400 rounded-full"></div>
-        </div>
-        <div class="absolute top-32 md:top-40 right-4 md:right-20 w-8 h-8 md:w-12 md:h-12 border border-blue-400 rounded-full opacity-30 animate-pulse" style="animation-delay: 1s;">
-            <div class="w-full h-full rounded-full border-2 border-transparent border-t-blue-400 animate-spin" style="animation-duration: 3s;"></div>
-        </div>
-        <div class="absolute bottom-24 md:bottom-32 left-1/4 opacity-20 animate-pulse" style="animation-delay: 2s;">
-            <svg width="16" height="16" md:width="24" md:height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor" class="text-blue-400"/>
-            </svg>
-        </div>
-        <div class="absolute bottom-16 md:bottom-20 right-1/3 w-4 h-4 md:w-6 md:h-6 opacity-25 animate-pulse" style="animation-delay: 0.5s;">
-            <div class="w-full h-full border-2 border-blue-500 transform rotate-45"></div>
-        </div>
-        <!-- Speed lines effect -->
-        <div class="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400/20 to-transparent opacity-30"></div>
-        <div class="absolute top-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400/15 to-transparent opacity-25" style="animation-delay: 1s;"></div>
-    </section>
-
-    <!-- CTA Buttons Section -->
-    <section class="py-16 bg-black">
-        <div class="container mx-auto px-4 text-center">
-            <div class="flex flex-col sm:flex-row gap-6 justify-center max-w-2xl mx-auto">
-                <button onclick="openWhatsApp()" class="gradient-blue text-white px-8 py-4 rounded-2xl text-lg font-button hover:scale-105 transition-all duration-300 shadow-2xl">
-                    FALAR NO WHATSAPP
-                </button>
-                <button onclick="scrollToSection('estoque')" class="glass-effect text-white px-8 py-4 rounded-2xl text-lg font-button hover:scale-105 transition-all duration-300 border-2 border-blue-400">
-                    VER ESTOQUE
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Estoque -->
-    <section id="estoque" class="py-24 bg-black relative">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-20">
-                <span class="inline-block px-6 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-semibold rounded-full mb-6">
-                    ESTOQUE ATUALIZADO
-                </span>
-                <h2 class="text-2xl md:text-4xl font-bold font-luxury mb-4 md:mb-6">NOSSOS VEÍCULOS</h2>
-                <p class="text-base md:text-lg text-gray-300 max-w-3xl mx-auto font-body px-4">Seminovos e usados selecionados com qualidade garantida</p>
-            </div>
-            <!-- Carrossel de Veículos -->
-            <div class="relative max-w-6xl mx-auto">
-                <!-- Botões de navegação -->
-                <button onclick="previousCar()" class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110">
-                    <i class="fas fa-chevron-left text-white text-xl"></i>
-                </button>
-                
-                <button onclick="nextCar()" class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110">
-                    <i class="fas fa-chevron-right text-white text-xl"></i>
-                </button>
-                
-                <!-- Container do carrossel -->
-                <div class="overflow-hidden rounded-2xl">
-                    <div id="carCarousel" class="flex transition-transform duration-500 ease-in-out">
-                        <!-- Veículo 1 -->
-                        <div class="w-full flex-shrink-0 px-4">
-                            <div class="car-card gradient-premium rounded-2xl overflow-hidden shadow-2xl hover:shadow-blue-400/20 transition-all duration-500 max-w-md mx-auto">
-                                <div class="relative">
-                                    <img src="https://imgur.com/dI6WlRf.jpg" alt="Honda Civic 2019" class="w-full h-64 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                    <div class="w-full h-64 bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-gray-400" style="display: none;">
-                                        <div class="text-center">
-                                            <i class="fas fa-car text-4xl mb-2"></i>
-                                            <p class="text-sm">Honda Civic 2019</p>
-                                        </div>
-                                    </div>
-                                    <div class="absolute top-4 right-4 bg-blue-400 text-white px-4 py-2 rounded-full text-sm font-bold">
-                                        2019
-                                    </div>
-                                </div>
-                                <div class="p-4 md:p-8">
-                                    <h3 class="text-xl md:text-3xl font-bold font-heading mb-2 md:mb-3">Honda Civic 2019</h3>
-                                    <p class="text-gray-300 mb-4 md:mb-6 font-body text-sm md:text-lg">Sedan • Automático • Completo</p>
-                                    <div class="flex items-center justify-between">
-                                        <div>
-                                            <p class="text-2xl md:text-4xl font-bold text-blue-400">R$ 89.900</p>
-                                            <p class="text-xs md:text-sm text-gray-400">ou 48x de R$ 2.247</p>
-                                        </div>
-                                        <button onclick="requestQuote('Honda Civic 2019')" class="gradient-blue text-white px-4 md:px-8 py-3 md:py-4 rounded-xl font-button hover:scale-105 transition-all duration-300 text-xs md:text-sm">
-                                            CONSULTAR
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Veículo 2 -->
-                        <div class="w-full flex-shrink-0 px-4">
-                            <div class="car-card gradient-premium rounded-2xl overflow-hidden shadow-2xl hover:shadow-blue-400/20 transition-all duration-500 max-w-md mx-auto">
-                                <div class="relative">
-                                    <img src="https://imgur.com/1jsMxh5.jpg" alt="Toyota Corolla 2020" class="w-full h-64 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                    <div class="w-full h-64 bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-gray-400" style="display: none;">
-                                        <div class="text-center">
-                                            <i class="fas fa-car text-4xl mb-2"></i>
-                                            <p class="text-sm">Toyota Corolla 2020</p>
-                                        </div>
-                                    </div>
-                                    <div class="absolute top-4 right-4 bg-blue-400 text-white px-4 py-2 rounded-full text-sm font-bold">
-                                        2020
-                                    </div>
-                                </div>
-                                <div class="p-4 md:p-8">
-                                    <h3 class="text-xl md:text-3xl font-bold font-luxury mb-2 md:mb-3">Toyota Corolla 2020</h3>
-                                    <p class="text-gray-300 mb-4 md:mb-6 text-sm md:text-lg">Sedan • CVT • XEI</p>
-                                    <div class="flex items-center justify-between">
-                                        <div>
-                                            <p class="text-2xl md:text-4xl font-bold text-blue-400">R$ 95.500</p>
-                                            <p class="text-xs md:text-sm text-gray-400">ou 48x de R$ 2.387</p>
-                                        </div>
-                                        <button onclick="requestQuote('Toyota Corolla 2020')" class="gradient-blue text-white px-4 md:px-8 py-3 md:py-4 rounded-xl font-button hover:scale-105 transition-all duration-300 text-xs md:text-sm">
-                                            CONSULTAR
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Veículo 3 -->
-                        <div class="w-full flex-shrink-0 px-4">
-                            <div class="car-card gradient-premium rounded-2xl overflow-hidden shadow-2xl hover:shadow-blue-400/20 transition-all duration-500 max-w-md mx-auto">
-                                <div class="relative">
-                                    <img src="https://imgur.com/dCuLP1V.jpg" alt="Chevrolet Onix 2021" class="w-full h-64 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                    <div class="w-full h-64 bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-gray-400" style="display: none;">
-                                        <div class="text-center">
-                                            <i class="fas fa-car text-4xl mb-2"></i>
-                                            <p class="text-sm">Chevrolet Onix 2021</p>
-                                        </div>
-                                    </div>
-                                    <div class="absolute top-4 right-4 bg-blue-400 text-white px-4 py-2 rounded-full text-sm font-bold">
-                                        2021
-                                    </div>
-                                </div>
-                                <div class="p-4 md:p-8">
-                                    <h3 class="text-xl md:text-3xl font-bold font-luxury mb-2 md:mb-3">Chevrolet Onix 2021</h3>
-                                    <p class="text-gray-300 mb-4 md:mb-6 text-sm md:text-lg">Hatch • Manual • LT</p>
-                                    <div class="flex items-center justify-between">
-                                        <div>
-                                            <p class="text-2xl md:text-4xl font-bold text-blue-400">R$ 62.900</p>
-                                            <p class="text-xs md:text-sm text-gray-400">ou 48x de R$ 1.572</p>
-                                        </div>
-                                        <button onclick="requestQuote('Chevrolet Onix 2021')" class="gradient-blue text-white px-4 md:px-8 py-3 md:py-4 rounded-xl font-button hover:scale-105 transition-all duration-300 text-xs md:text-sm">
-                                            CONSULTAR
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Indicadores -->
-                <div class="flex justify-center mt-8 space-x-3">
-                    <button onclick="goToCar(0)" class="car-indicator w-3 h-3 rounded-full bg-blue-400 transition-all duration-300"></button>
-                    <button onclick="goToCar(1)" class="car-indicator w-3 h-3 rounded-full bg-gray-600 transition-all duration-300"></button>
-                    <button onclick="goToCar(2)" class="car-indicator w-3 h-3 rounded-full bg-gray-600 transition-all duration-300"></button>
-                </div>
-            </div>
-            
-            <div class="text-center mt-16">
-                <button onclick="openWhatsApp()" class="gradient-blue text-white px-8 md:px-12 py-4 md:py-5 rounded-2xl text-lg md:text-xl font-bold hover:scale-105 transition-all duration-300 shadow-2xl">
-                    VER MAIS VEÍCULOS
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Financiamento -->
-    <section id="financiamento" class="py-24 bg-gray-900 relative">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto text-center">
-                <div class="mb-16">
-                    <span class="inline-block px-6 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-semibold rounded-full mb-6">
-                        FINANCIAMENTO FACILITADO
-                    </span>
-                    <h2 class="text-5xl font-bold font-luxury mb-6">CONDIÇÕES ESPECIAIS</h2>
-                    <p class="text-2xl text-gray-300 max-w-4xl mx-auto">Aprovação rápida e condições que cabem no seu bolso</p>
-                </div>
-                
-                <div class="grid md:grid-cols-3 gap-8 mb-16">
-                    <div class="gradient-premium p-10 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300">
-                        <div class="w-20 h-20 gradient-blue rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl">
-                            <span class="text-white text-2xl font-bold">%</span>
-                        </div>
-                        <h3 class="text-2xl font-bold font-luxury mb-4">Taxa Competitiva</h3>
-                        <p class="text-4xl font-bold text-blue-400 mb-2">A partir de 1,2%</p>
-                        <p class="text-gray-300">Taxas especiais</p>
-                    </div>
-                    
-                    <div class="gradient-premium p-10 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300">
-                        <div class="w-20 h-20 gradient-blue rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl">
-                            <span class="text-white text-2xl font-bold">60x</span>
-                        </div>
-                        <h3 class="text-2xl font-bold font-luxury mb-4">Prazo Flexível</h3>
-                        <p class="text-4xl font-bold text-blue-400 mb-2">Até 60x</p>
-                        <p class="text-gray-300">Parcelas que cabem no bolso</p>
-                    </div>
-                    
-                    <div class="gradient-premium p-10 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300">
-                        <div class="w-20 h-20 gradient-blue rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl">
-                            <span class="text-white text-2xl font-bold">R$</span>
-                        </div>
-                        <h3 class="text-2xl font-bold font-luxury mb-4">Entrada Facilitada</h3>
-                        <p class="text-4xl font-bold text-blue-400 mb-2">Desde R$ 5.000</p>
-                        <p class="text-gray-300">Condições especiais</p>
-                    </div>
-                </div>
-                
-                <div class="bg-gradient-to-r from-blue-400/10 to-blue-600/10 p-12 rounded-2xl border border-blue-400/30 mb-12 text-center">
-                    <h3 class="text-3xl font-bold font-luxury mb-6 text-white">VANTAGENS NERY VEÍCULOS</h3>
-                    <p class="text-xl text-gray-300 mb-10 font-body">Benefícios especiais para nossos clientes</p>
-                    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                        <div class="flex flex-col items-center space-y-3 p-6 bg-black/20 rounded-xl border border-blue-400/20">
-                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-2">
-                                <i class="fas fa-clock text-white text-lg"></i>
-                            </div>
-                            <span class="text-lg font-semibold font-heading text-white">Aprovação em até 24 horas</span>
-                        </div>
-                        <div class="flex flex-col items-center space-y-3 p-6 bg-black/20 rounded-xl border border-blue-400/20">
-                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-2">
-                                <i class="fas fa-file-alt text-white text-lg"></i>
-                            </div>
-                            <span class="text-lg font-semibold font-heading text-white">Documentação facilitada</span>
-                        </div>
-                        <div class="flex flex-col items-center space-y-3 p-6 bg-black/20 rounded-xl border border-blue-400/20">
-                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-2">
-                                <i class="fas fa-tools text-white text-lg"></i>
-                            </div>
-                            <span class="text-lg font-semibold font-heading text-white">Veículos revisados</span>
-                        </div>
-                        <div class="flex flex-col items-center space-y-3 p-6 bg-black/20 rounded-xl border border-blue-400/20">
-                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-2">
-                                <i class="fas fa-user-tie text-white text-lg"></i>
-                            </div>
-                            <span class="text-lg font-semibold font-heading text-white">Atendimento personalizado</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <button onclick="openWhatsApp()" class="gradient-blue text-white px-12 py-5 rounded-2xl text-xl font-bold hover:scale-105 transition-all duration-300 shadow-2xl">
-                    SIMULAR FINANCIAMENTO
-                </button>
-            </div>
-        </div>
-        
-        <!-- Background decoration -->
-        <div class="absolute top-0 left-0 w-full h-full opacity-5">
-            <div class="absolute top-32 left-32 w-24 h-24 border-2 border-blue-400 rounded-full"></div>
-            <div class="absolute bottom-32 right-32 w-32 h-32 border-2 border-blue-400 rounded-full"></div>
-        </div>
-    </section>
-
-    <!-- Depoimentos -->
-    <section class="py-20 bg-transparent">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-16">O que nossos clientes dizem</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="testimonial-card p-8 rounded-xl border border-gray-800">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center mr-4">
-                            <i class="fas fa-user text-gray-300"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold">Maria Silva</h4>
-                            <div class="flex text-blue-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-300">"Excelente atendimento! Consegui financiar meu Civic com condições incríveis. Recomendo a Nery Veículos para todos!"</p>
-                </div>
-                
-                <div class="testimonial-card p-8 rounded-xl border border-gray-800">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center mr-4">
-                            <i class="fas fa-user text-gray-300"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold">João Santos</h4>
-                            <div class="flex text-blue-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-300">"Processo super rápido e transparente. Em 2 dias estava com meu carro novo na garagem. Equipe nota 10!"</p>
-                </div>
-                
-                <div class="testimonial-card p-8 rounded-xl border border-gray-800">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center mr-4">
-                            <i class="fas fa-user text-gray-300"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold">Ana Costa</h4>
-                            <div class="flex text-blue-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-300">"Melhor experiência de compra que já tive! Preço justo, atendimento personalizado e carro impecável."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sobre a Concessionária -->
-    <section class="py-20 bg-transparent">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-4xl font-bold mb-8">Tradição e confiança em Francisco Morato</h2>
-                <p class="text-xl text-gray-300 mb-8">
-                    A Nery Veículos é especializada em seminovos e usados, oferecendo qualidade, transparência e as melhores condições para você realizar o sonho do carro próprio.
-                </p>
-                
-                <div class="grid md:grid-cols-3 gap-8 mb-12">
-                    <div class="text-center">
-                        <div class="text-4xl font-bold text-blue-400 mb-2">1.000+</div>
-                        <p class="text-gray-400">Carros vendidos</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-4xl font-bold text-blue-400 mb-2">95%</div>
-                        <p class="text-gray-400">Clientes satisfeitos</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-4xl font-bold text-blue-400 mb-2">5+</div>
-                        <p class="text-gray-400">Anos de experiência</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Formulário de Contato -->
-    <section id="contato" class="py-20 bg-transparent">
-        <div class="container mx-auto px-4">
-            <div class="max-w-2xl mx-auto">
-                <h2 class="text-4xl font-bold text-center mb-8">Solicite seu Orçamento</h2>
-                <p class="text-xl text-gray-300 text-center mb-12">Preencha o formulário e nossa equipe entrará em contato</p>
-                
-                <form onsubmit="submitForm(event)" class="bg-gray-900 p-8 rounded-xl border border-gray-800">
-                    <div class="grid md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <label class="block text-sm font-medium mb-2">Nome Completo</label>
-                            <input type="text" id="nome" required class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:border-red-400 focus:outline-none">
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium mb-2">WhatsApp</label>
-                            <input type="tel" id="telefone" required placeholder="(11) 99999-9999" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:border-red-400 focus:outline-none">
-                        </div>
-                    </div>
-                    
-                    <div class="mb-6">
-                        <label class="block text-sm font-medium mb-2">E-mail</label>
-                        <input type="email" id="email" required class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:border-red-400 focus:outline-none">
-                    </div>
-                    
-                    <div class="mb-6">
-                        <label class="block text-sm font-medium mb-2">Interesse</label>
-                        <select id="interesse" required class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:border-red-400 focus:outline-none">
-                            <option value="">Selecione uma opção</option>
-                            <option value="Comprar carro novo">Comprar carro novo</option>
-                            <option value="Comprar carro seminovo">Comprar carro seminovo</option>
-                            <option value="Vender meu carro">Vender meu carro</option>
-                            <option value="Trocar meu carro">Trocar meu carro</option>
-                            <option value="Financiamento">Informações sobre financiamento</option>
-                        </select>
-                    </div>
-                    
-                    <div class="mb-6">
-                        <label class="block text-sm font-medium mb-2">Mensagem</label>
-                        <textarea id="mensagem" rows="4" placeholder="Conte-nos mais sobre seu interesse..." class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:border-red-400 focus:outline-none"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="w-full gradient-blue text-white py-4 rounded-lg text-lg font-semibold hover:opacity-90 transition-opacity">
-                        Enviar Solicitação
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Final -->
-    <section class="py-20 bg-gradient-to-r from-red-600 via-red-500 to-red-600">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-4">Quer vender ou trocar seu carro?</h2>
-            <p class="text-xl mb-8">Fale com nossa equipe agora mesmo e faça a melhor negociação!</p>
-            <button onclick="openWhatsApp()" class="bg-white text-red-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors">
-                <i class="fab fa-whatsapp mr-2"></i>
-                Falar com Especialista
-            </button>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-black/30 backdrop-blur-sm border-t border-gray-800/50 py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-16 h-16 flex items-center justify-center">
-                            <img src="https://i.imgur.com/vNuK6vp.png" alt="Nery Veículos" class="w-full h-full object-contain" onerror="this.src=''; this.alt='Logo não disponível'; this.style.display='none';">
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold">NERY VEÍCULOS</h3>
-                            <p class="text-xs text-gray-400">Seminovos & Usados</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm">Realizando sonhos há mais de 10 anos com qualidade e confiança.</p>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4">Links Rápidos</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#home" class="hover:text-red-400 transition-colors">Home</a></li>
-                        <li><a href="#estoque" class="hover:text-red-400 transition-colors">Estoque</a></li>
-                        <li><a href="#financiamento" class="hover:text-red-400 transition-colors">Financiamento</a></li>
-                        <li><a href="#contato" class="hover:text-red-400 transition-colors">Contato</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4">Contato</h4>
-                    <ul class="space-y-2 text-sm text-gray-400 mb-4">
-                        <li>WhatsApp: (11) 98598-3781</li>
-                        <li>Email: neryveiculos10@gmail.com</li>
-                        <li>Endereço: Av Marginal 365</li>
-                        <li>Jd Ouro Preto - Francisco Morato</li>
-                    </ul>
-                    <div class="mt-4">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.123456789!2d-46.7456789!3d-23.2789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDE2JzQ0LjAiUyA0NsKwNDQnNDQuNCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr"
-                            width="100%" 
-                            height="120" 
-                            style="border:0; border-radius: 8px;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade"
-                            class="rounded-lg shadow-lg">
-                        </iframe>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4">Redes Sociais</h4>
-                    <div class="flex space-x-4">
-                        <a href="https://instagram.com/neryveiculos_" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg">
-                            <i class="fab fa-instagram text-white text-lg"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-                <p>© 2025 AutoPrime Concessionária. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Floating WhatsApp Button -->
-    <div class="floating-whatsapp">
-        <button onclick="openWhatsApp()" class="w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center">
-            <i class="fab fa-whatsapp text-white text-2xl"></i>
-        </button>
+    <nav class="hidden md:flex space-x-8"><a href="#home" class="hover:text-red-400 transition-colors">Home</a> <a href="#estoque" class="hover:text-red-400 transition-colors">Estoque</a> <a href="#financiamento" class="hover:text-red-400 transition-colors">Financiamento</a> <a href="#contato" class="hover:text-red-400 transition-colors">Contato</a>
+    </nav><button onclick="openWhatsApp('Header - Consultor Exclusivo')" class="gradient-blue text-white px-8 py-3 rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-xl"> Consultor Exclusivo </button> <!-- Mobile Menu Button --> <button class="md:hidden text-white" onclick="toggleMobileMenu()"> <i class="fas fa-bars text-xl"></i> </button>
+   </div><!-- Mobile Menu -->
+   <div id="mobileMenu" class="hidden md:hidden bg-black/95 border-t border-gray-800">
+    <nav class="container mx-auto px-4 py-4 flex flex-col space-y-4"><a href="#home" class="hover:text-red-400 transition-colors" onclick="toggleMobileMenu()">Home</a> <a href="#estoque" class="hover:text-red-400 transition-colors" onclick="toggleMobileMenu()">Estoque</a> <a href="#financiamento" class="hover:text-red-400 transition-colors" onclick="toggleMobileMenu()">Financiamento</a> <a href="#contato" class="hover:text-red-400 transition-colors" onclick="toggleMobileMenu()">Contato</a>
+    </nav>
+   </div>
+  </header><!-- Fade Banner -->
+  <div class="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 text-white py-4 banner-container relative shadow-lg">
+   <div class="banner-item"><i class="fas fa-star banner-icon text-yellow-400"></i> <span>FINANCIAMENTO APROVADO EM 24H</span>
+   </div>
+   <div class="banner-item"><i class="fas fa-shield-alt banner-icon text-green-400"></i> <span>GARANTIA DE PROCEDÊNCIA</span>
+   </div>
+   <div class="banner-item"><i class="fas fa-handshake banner-icon text-yellow-400"></i> <span>MELHOR PREÇO GARANTIDO</span>
+   </div>
+   <div class="banner-item"><i class="fab fa-whatsapp banner-icon text-green-400"></i> <span>ATENDIMENTO 24/7</span>
+   </div>
+   <div class="banner-item"><i class="fas fa-car banner-icon text-red-400"></i> <span>VEÍCULOS REVISADOS</span>
+   </div>
+   <div class="banner-item"><i class="fas fa-percentage banner-icon text-yellow-400"></i> <span>TAXAS A PARTIR DE 1,2%</span>
+   </div>
+   <div class="banner-item"><i class="fas fa-tools banner-icon text-blue-300"></i> <span>MANUTENÇÃO GARANTIDA</span>
+   </div>
+   <div class="banner-item"><i class="fas fa-medal banner-icon text-yellow-400"></i> <span>QUALIDADE CERTIFICADA</span>
+   </div>
+  </div><!-- Hero Section -->
+  <section id="home" class="hero-bg min-h-full flex items-center justify-center text-center py-20 md:py-32 relative overflow-hidden bg-black"><!-- Banner de imagens individuais -->
+   <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+    <div class="banner-image-container active"><img src="https://imgur.com/NOJ5A5D.jpg" alt="Banner 1" class="banner-image" onerror="this.style.display='none';">
     </div>
-
-    <script>
+    <div class="banner-image-container"><img src="https://imgur.com/M0Osgwg.jpg" alt="Banner 2" class="banner-image" onerror="this.style.display='none';">
+    </div><!-- Setas de navegação do banner - ocultas no mobile --> <button onclick="changeBannerImage('prev')" class="banner-nav banner-nav-left hidden md:flex"> <i class="fas fa-chevron-left"></i> </button> <button onclick="changeBannerImage('next')" class="banner-nav banner-nav-right hidden md:flex"> <i class="fas fa-chevron-right"></i> </button>
+   </div><!-- Overlay escuro para melhor legibilidade do texto -->
+   <div class="absolute top-0 left-0 w-full h-full bg-black/20 z-5"></div><!-- Conteúdo principal do hero -->
+   <div class="relative z-10 px-4 max-w-4xl mx-auto">
+   </div><!-- Automotive floating elements - reduzidos no mobile -->
+   <div class="absolute top-20 left-4 md:left-10 w-6 h-6 md:w-8 md:h-8 border-2 border-blue-400 rounded-full opacity-40 animate-pulse flex items-center justify-center">
+    <div class="w-1 h-1 md:w-2 md:h-2 bg-blue-400 rounded-full"></div>
+   </div>
+   <div class="absolute top-32 md:top-40 right-4 md:right-20 w-8 h-8 md:w-12 md:h-12 border border-blue-400 rounded-full opacity-30 animate-pulse" style="animation-delay: 1s;">
+    <div class="w-full h-full rounded-full border-2 border-transparent border-t-blue-400 animate-spin" style="animation-duration: 3s;"></div>
+   </div>
+   <div class="absolute bottom-24 md:bottom-32 left-1/4 opacity-20 animate-pulse" style="animation-delay: 2s;">
+    <svg width="16" height="16" md:width="24" md:height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor" class="text-blue-400" />
+    </svg>
+   </div>
+   <div class="absolute bottom-16 md:bottom-20 right-1/3 w-4 h-4 md:w-6 md:h-6 opacity-25 animate-pulse" style="animation-delay: 0.5s;">
+    <div class="w-full h-full border-2 border-blue-500 transform rotate-45"></div>
+   </div><!-- Speed lines effect -->
+   <div class="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400/20 to-transparent opacity-30"></div>
+   <div class="absolute top-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400/15 to-transparent opacity-25" style="animation-delay: 1s;"></div>
+  </section><!-- CTA Buttons Section -->
+  <section class="py-16 bg-black">
+   <div class="container mx-auto px-4 text-center">
+    <div class="flex flex-col sm:flex-row gap-6 justify-center max-w-2xl mx-auto"><button onclick="openWhatsApp('CTA Section - Falar WhatsApp')" class="gradient-blue text-white px-8 py-4 rounded-2xl text-lg font-button hover:scale-105 transition-all duration-300 shadow-2xl"> FALAR NO WHATSAPP </button> <button onclick="scrollToSection('estoque')" class="glass-effect text-white px-8 py-4 rounded-2xl text-lg font-button hover:scale-105 transition-all duration-300 border-2 border-blue-400"> VER ESTOQUE </button>
+    </div>
+   </div>
+  </section><!-- Estoque -->
+  <section id="estoque" class="py-24 bg-black relative">
+   <div class="container mx-auto px-4">
+    <div class="text-center mb-20"><span class="inline-block px-6 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-semibold rounded-full mb-6"> ESTOQUE ATUALIZADO </span>
+     <h2 class="text-2xl md:text-4xl font-bold font-luxury mb-4 md:mb-6">NOSSOS VEÍCULOS</h2>
+     <p class="text-base md:text-lg text-gray-300 max-w-3xl mx-auto font-body px-4">Seminovos e usados selecionados com qualidade garantida</p>
+    </div><!-- Carrossel de Veículos -->
+    <div class="relative max-w-6xl mx-auto"><!-- Botões de navegação --> <button onclick="previousCar()" class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110"> <i class="fas fa-chevron-left text-white text-xl"></i> </button> <button onclick="nextCar()" class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110"> <i class="fas fa-chevron-right text-white text-xl"></i> </button> <!-- Container do carrossel -->
+     <div class="overflow-hidden rounded-2xl">
+      <div id="carCarousel" class="flex transition-transform duration-500 ease-in-out"><!-- Veículo 1 -->
+       <div class="w-full flex-shrink-0 px-4">
+        <div class="car-card gradient-premium rounded-2xl overflow-hidden shadow-2xl hover:shadow-blue-400/20 transition-all duration-500 max-w-md mx-auto">
+         <div class="relative"><img src="https://imgur.com/dI6WlRf.jpg" alt="Honda Civic 2019" class="w-full h-64 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="w-full h-64 bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-gray-400" style="display: none;">
+           <div class="text-center"><i class="fas fa-car text-4xl mb-2"></i>
+            <p class="text-sm">Honda Civic 2019</p>
+           </div>
+          </div>
+          <div class="absolute top-4 right-4 bg-blue-400 text-white px-4 py-2 rounded-full text-sm font-bold">
+           2019
+          </div>
+         </div>
+         <div class="p-4 md:p-8">
+          <h3 class="text-xl md:text-3xl font-bold font-heading mb-2 md:mb-3">Honda Civic 2019</h3>
+          <p class="text-gray-300 mb-4 md:mb-6 font-body text-sm md:text-lg">Sedan • Automático • Completo</p>
+          <div class="flex items-center justify-between">
+           <div>
+            <p class="text-2xl md:text-4xl font-bold text-blue-400">R$ 89.900</p>
+            <p class="text-xs md:text-sm text-gray-400">ou 48x de R$ 2.247</p>
+           </div><button onclick="requestQuote('Honda Civic 2019')" class="gradient-blue text-white px-4 md:px-8 py-3 md:py-4 rounded-xl font-button hover:scale-105 transition-all duration-300 text-xs md:text-sm"> CONSULTAR </button>
+          </div>
+         </div>
+        </div>
+       </div><!-- Veículo 2 -->
+       <div class="w-full flex-shrink-0 px-4">
+        <div class="car-card gradient-premium rounded-2xl overflow-hidden shadow-2xl hover:shadow-blue-400/20 transition-all duration-500 max-w-md mx-auto">
+         <div class="relative"><img src="https://imgur.com/1jsMxh5.jpg" alt="Toyota Corolla 2020" class="w-full h-64 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="w-full h-64 bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-gray-400" style="display: none;">
+           <div class="text-center"><i class="fas fa-car text-4xl mb-2"></i>
+            <p class="text-sm">Toyota Corolla 2020</p>
+           </div>
+          </div>
+          <div class="absolute top-4 right-4 bg-blue-400 text-white px-4 py-2 rounded-full text-sm font-bold">
+           2020
+          </div>
+         </div>
+         <div class="p-4 md:p-8">
+          <h3 class="text-xl md:text-3xl font-bold font-luxury mb-2 md:mb-3">Toyota Corolla 2020</h3>
+          <p class="text-gray-300 mb-4 md:mb-6 text-sm md:text-lg">Sedan • CVT • XEI</p>
+          <div class="flex items-center justify-between">
+           <div>
+            <p class="text-2xl md:text-4xl font-bold text-blue-400">R$ 95.500</p>
+            <p class="text-xs md:text-sm text-gray-400">ou 48x de R$ 2.387</p>
+           </div><button onclick="requestQuote('Toyota Corolla 2020')" class="gradient-blue text-white px-4 md:px-8 py-3 md:py-4 rounded-xl font-button hover:scale-105 transition-all duration-300 text-xs md:text-sm"> CONSULTAR </button>
+          </div>
+         </div>
+        </div>
+       </div><!-- Veículo 3 -->
+       <div class="w-full flex-shrink-0 px-4">
+        <div class="car-card gradient-premium rounded-2xl overflow-hidden shadow-2xl hover:shadow-blue-400/20 transition-all duration-500 max-w-md mx-auto">
+         <div class="relative"><img src="https://imgur.com/dCuLP1V.jpg" alt="Chevrolet Onix 2021" class="w-full h-64 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="w-full h-64 bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-gray-400" style="display: none;">
+           <div class="text-center"><i class="fas fa-car text-4xl mb-2"></i>
+            <p class="text-sm">Chevrolet Onix 2021</p>
+           </div>
+          </div>
+          <div class="absolute top-4 right-4 bg-blue-400 text-white px-4 py-2 rounded-full text-sm font-bold">
+           2021
+          </div>
+         </div>
+         <div class="p-4 md:p-8">
+          <h3 class="text-xl md:text-3xl font-bold font-luxury mb-2 md:mb-3">Chevrolet Onix 2021</h3>
+          <p class="text-gray-300 mb-4 md:mb-6 text-sm md:text-lg">Hatch • Manual • LT</p>
+          <div class="flex items-center justify-between">
+           <div>
+            <p class="text-2xl md:text-4xl font-bold text-blue-400">R$ 62.900</p>
+            <p class="text-xs md:text-sm text-gray-400">ou 48x de R$ 1.572</p>
+           </div><button onclick="requestQuote('Chevrolet Onix 2021')" class="gradient-blue text-white px-4 md:px-8 py-3 md:py-4 rounded-xl font-button hover:scale-105 transition-all duration-300 text-xs md:text-sm"> CONSULTAR </button>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div><!-- Indicadores -->
+     <div class="flex justify-center mt-8 space-x-3"><button onclick="goToCar(0)" class="car-indicator w-3 h-3 rounded-full bg-blue-400 transition-all duration-300"></button> <button onclick="goToCar(1)" class="car-indicator w-3 h-3 rounded-full bg-gray-600 transition-all duration-300"></button> <button onclick="goToCar(2)" class="car-indicator w-3 h-3 rounded-full bg-gray-600 transition-all duration-300"></button>
+     </div>
+    </div>
+    <div class="text-center mt-16"><button onclick="openWhatsApp('Estoque - Ver Mais Veículos')" class="gradient-blue text-white px-8 md:px-12 py-4 md:py-5 rounded-2xl text-lg md:text-xl font-bold hover:scale-105 transition-all duration-300 shadow-2xl"> VER MAIS VEÍCULOS </button>
+    </div>
+   </div>
+  </section><!-- Financiamento -->
+  <section id="financiamento" class="py-24 bg-gray-900 relative">
+   <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto text-center">
+     <div class="mb-16"><span class="inline-block px-6 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-semibold rounded-full mb-6"> FINANCIAMENTO FACILITADO </span>
+      <h2 class="text-5xl font-bold font-luxury mb-6">CONDIÇÕES ESPECIAIS</h2>
+      <p class="text-2xl text-gray-300 max-w-4xl mx-auto">Aprovação rápida e condições que cabem no seu bolso</p>
+     </div>
+     <div class="grid md:grid-cols-3 gap-8 mb-16">
+      <div class="gradient-premium p-10 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300">
+       <div class="w-20 h-20 gradient-blue rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl"><span class="text-white text-2xl font-bold">%</span>
+       </div>
+       <h3 class="text-2xl font-bold font-luxury mb-4">Taxa Competitiva</h3>
+       <p class="text-4xl font-bold text-blue-400 mb-2">A partir de 1,2%</p>
+       <p class="text-gray-300">Taxas especiais</p>
+      </div>
+      <div class="gradient-premium p-10 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300">
+       <div class="w-20 h-20 gradient-blue rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl"><span class="text-white text-2xl font-bold">60x</span>
+       </div>
+       <h3 class="text-2xl font-bold font-luxury mb-4">Prazo Flexível</h3>
+       <p class="text-4xl font-bold text-blue-400 mb-2">Até 60x</p>
+       <p class="text-gray-300">Parcelas que cabem no bolso</p>
+      </div>
+      <div class="gradient-premium p-10 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300">
+       <div class="w-20 h-20 gradient-blue rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl"><span class="text-white text-2xl font-bold">R$</span>
+       </div>
+       <h3 class="text-2xl font-bold font-luxury mb-4">Entrada Facilitada</h3>
+       <p class="text-4xl font-bold text-blue-400 mb-2">Desde R$ 5.000</p>
+       <p class="text-gray-300">Condições especiais</p>
+      </div>
+     </div>
+     <div class="bg-gradient-to-r from-blue-400/10 to-blue-600/10 p-12 rounded-2xl border border-blue-400/30 mb-12 text-center">
+      <h3 class="text-3xl font-bold font-luxury mb-6 text-white">VANTAGENS NERY VEÍCULOS</h3>
+      <p class="text-xl text-gray-300 mb-10 font-body">Benefícios especiais para nossos clientes</p>
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+       <div class="flex flex-col items-center space-y-3 p-6 bg-black/20 rounded-xl border border-blue-400/20">
+        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-2"><i class="fas fa-clock text-white text-lg"></i>
+        </div><span class="text-lg font-semibold font-heading text-white">Aprovação em até 24 horas</span>
+       </div>
+       <div class="flex flex-col items-center space-y-3 p-6 bg-black/20 rounded-xl border border-blue-400/20">
+        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-2"><i class="fas fa-file-alt text-white text-lg"></i>
+        </div><span class="text-lg font-semibold font-heading text-white">Documentação facilitada</span>
+       </div>
+       <div class="flex flex-col items-center space-y-3 p-6 bg-black/20 rounded-xl border border-blue-400/20">
+        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-2"><i class="fas fa-tools text-white text-lg"></i>
+        </div><span class="text-lg font-semibold font-heading text-white">Veículos revisados</span>
+       </div>
+       <div class="flex flex-col items-center space-y-3 p-6 bg-black/20 rounded-xl border border-blue-400/20">
+        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-2"><i class="fas fa-user-tie text-white text-lg"></i>
+        </div><span class="text-lg font-semibold font-heading text-white">Atendimento personalizado</span>
+       </div>
+      </div>
+     </div><button onclick="openWhatsApp('Financiamento - Simular')" class="gradient-blue text-white px-12 py-5 rounded-2xl text-xl font-bold hover:scale-105 transition-all duration-300 shadow-2xl"> SIMULAR FINANCIAMENTO </button>
+    </div>
+   </div><!-- Background decoration -->
+   <div class="absolute top-0 left-0 w-full h-full opacity-5">
+    <div class="absolute top-32 left-32 w-24 h-24 border-2 border-blue-400 rounded-full"></div>
+    <div class="absolute bottom-32 right-32 w-32 h-32 border-2 border-blue-400 rounded-full"></div>
+   </div>
+  </section><!-- Depoimentos -->
+  <section class="py-20 bg-transparent">
+   <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-16">O que nossos clientes dizem</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+     <div class="testimonial-card p-8 rounded-xl border border-gray-800">
+      <div class="flex items-center mb-4">
+       <div class="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center mr-4"><i class="fas fa-user text-gray-300"></i>
+       </div>
+       <div>
+        <h4 class="font-semibold">Maria Silva</h4>
+        <div class="flex text-blue-400"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i>
+        </div>
+       </div>
+      </div>
+      <p class="text-gray-300">"Excelente atendimento! Consegui financiar meu Civic com condições incríveis. Recomendo a Nery Veículos para todos!"</p>
+     </div>
+     <div class="testimonial-card p-8 rounded-xl border border-gray-800">
+      <div class="flex items-center mb-4">
+       <div class="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center mr-4"><i class="fas fa-user text-gray-300"></i>
+       </div>
+       <div>
+        <h4 class="font-semibold">João Santos</h4>
+        <div class="flex text-blue-400"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i>
+        </div>
+       </div>
+      </div>
+      <p class="text-gray-300">"Processo super rápido e transparente. Em 2 dias estava com meu carro novo na garagem. Equipe nota 10!"</p>
+     </div>
+     <div class="testimonial-card p-8 rounded-xl border border-gray-800">
+      <div class="flex items-center mb-4">
+       <div class="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center mr-4"><i class="fas fa-user text-gray-300"></i>
+       </div>
+       <div>
+        <h4 class="font-semibold">Ana Costa</h4>
+        <div class="flex text-blue-400"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i>
+        </div>
+       </div>
+      </div>
+      <p class="text-gray-300">"Melhor experiência de compra que já tive! Preço justo, atendimento personalizado e carro impecável."</p>
+     </div>
+    </div>
+   </div>
+  </section><!-- Sobre a Concessionária -->
+  <section class="py-20 bg-transparent">
+   <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto text-center">
+     <h2 class="text-4xl font-bold mb-8">Tradição e confiança em Francisco Morato</h2>
+     <p class="text-xl text-gray-300 mb-8">A Nery Veículos é especializada em seminovos e usados, oferecendo qualidade, transparência e as melhores condições para você realizar o sonho do carro próprio.</p>
+     <div class="grid md:grid-cols-3 gap-8 mb-12">
+      <div class="text-center">
+       <div class="text-4xl font-bold text-blue-400 mb-2">
+        1.000+
+       </div>
+       <p class="text-gray-400">Carros vendidos</p>
+      </div>
+      <div class="text-center">
+       <div class="text-4xl font-bold text-blue-400 mb-2">
+        95%
+       </div>
+       <p class="text-gray-400">Clientes satisfeitos</p>
+      </div>
+      <div class="text-center">
+       <div class="text-4xl font-bold text-blue-400 mb-2">
+        5+
+       </div>
+       <p class="text-gray-400">Anos de experiência</p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Formulário de Contato -->
+  <section id="contato" class="py-20 bg-transparent">
+   <div class="container mx-auto px-4">
+    <div class="max-w-2xl mx-auto">
+     <h2 class="text-4xl font-bold text-center mb-8">Solicite seu Orçamento</h2>
+     <p class="text-xl text-gray-300 text-center mb-12">Preencha o formulário e nossa equipe entrará em contato</p>
+     <form onsubmit="submitForm(event)" class="bg-gray-900 p-8 rounded-xl border border-gray-800">
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+       <div><label for="nome" class="block text-sm font-medium mb-2">Nome Completo</label> <input type="text" id="nome" name="nome" required class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:border-red-400 focus:outline-none">
+       </div>
+       <div><label for="telefone" class="block text-sm font-medium mb-2">WhatsApp</label> <input type="tel" id="telefone" name="telefone" required placeholder="(11) 99999-9999" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:border-red-400 focus:outline-none">
+       </div>
+      </div>
+      <div class="mb-6"><label for="email" class="block text-sm font-medium mb-2">E-mail</label> <input type="email" id="email" name="email" required class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:border-red-400 focus:outline-none">
+      </div>
+      <div class="mb-6"><label for="interesse" class="block text-sm font-medium mb-2">Interesse</label> <select id="interesse" name="interesse" required class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:border-red-400 focus:outline-none"> <option value="">Selecione uma opção</option> <option value="Comprar carro novo">Comprar carro novo</option> <option value="Comprar carro seminovo">Comprar carro seminovo</option> <option value="Vender meu carro">Vender meu carro</option> <option value="Trocar meu carro">Trocar meu carro</option> <option value="Financiamento">Informações sobre financiamento</option> </select>
+      </div>
+      <div class="mb-6"><label for="mensagem" class="block text-sm font-medium mb-2">Mensagem</label> <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte-nos mais sobre seu interesse..." class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:border-red-400 focus:outline-none"></textarea>
+      </div><button type="submit" class="w-full gradient-blue text-white py-4 rounded-lg text-lg font-semibold hover:opacity-90 transition-opacity"> Enviar Solicitação </button>
+     </form>
+    </div>
+   </div>
+  </section><!-- CTA Final -->
+  <section class="py-20 bg-gradient-to-r from-red-600 via-red-500 to-red-600">
+   <div class="container mx-auto px-4 text-center">
+    <h2 class="text-4xl font-bold mb-4">Quer vender ou trocar seu carro?</h2>
+    <p class="text-xl mb-8">Fale com nossa equipe agora mesmo e faça a melhor negociação!</p><button onclick="openWhatsApp('CTA Final - Vender/Trocar')" class="bg-white text-red-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors"> <i class="fab fa-whatsapp mr-2"></i> Falar com Especialista </button>
+   </div>
+  </section><!-- Footer -->
+  <footer class="bg-black/30 backdrop-blur-sm border-t border-gray-800/50 py-12">
+   <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-4 gap-8">
+     <div>
+      <div class="flex items-center space-x-3 mb-4">
+       <div class="w-16 h-16 flex items-center justify-center"><img src="https://i.imgur.com/vNuK6vp.png" alt="Nery Veículos" class="w-full h-full object-contain" onerror="this.src=''; this.alt='Logo não disponível'; this.style.display='none';">
+       </div>
+       <div>
+        <h3 class="text-xl font-bold">NERY VEÍCULOS</h3>
+        <p class="text-xs text-gray-400">Seminovos &amp; Usados</p>
+       </div>
+      </div>
+      <p class="text-gray-400 text-sm">Realizando sonhos há mais de 10 anos com qualidade e confiança.</p>
+     </div>
+     <div>
+      <h4 class="font-semibold mb-4">Links Rápidos</h4>
+      <ul class="space-y-2 text-sm text-gray-400">
+       <li><a href="#home" class="hover:text-red-400 transition-colors">Home</a></li>
+       <li><a href="#estoque" class="hover:text-red-400 transition-colors">Estoque</a></li>
+       <li><a href="#financiamento" class="hover:text-red-400 transition-colors">Financiamento</a></li>
+       <li><a href="#contato" class="hover:text-red-400 transition-colors">Contato</a></li>
+      </ul>
+     </div>
+     <div>
+      <h4 class="font-semibold mb-4">Contato</h4>
+      <ul class="space-y-2 text-sm text-gray-400 mb-4">
+       <li><a href="tel:+5511985983781" onclick="trackClick('Phone Call', 'Footer')" class="hover:text-blue-400 transition-colors"> WhatsApp: (11) 98598-3781 </a></li>
+       <li><a href="mailto:neryveiculos10@gmail.com" onclick="trackClick('Email', 'Footer')" class="hover:text-blue-400 transition-colors"> Email: neryveiculos10@gmail.com </a></li>
+       <li>Endereço: Av Marginal 365</li>
+       <li>Jd Ouro Preto - Francisco Morato</li>
+      </ul>
+      <div class="mt-4"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.123456789!2d-46.7456789!3d-23.2789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDE2JzQ0LjAiUyA0NsKwNDQnNDQuNCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr" width="100%" height="120" style="border:0; border-radius: 8px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg shadow-lg"> </iframe>
+      </div>
+     </div>
+     <div>
+      <h4 class="font-semibold mb-4">Redes Sociais</h4>
+      <div class="flex space-x-4"><a href="https://instagram.com/neryveiculos_" target="_blank" rel="noopener noreferrer" onclick="trackClick('Instagram', 'Footer')" class="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg"> <i class="fab fa-instagram text-white text-lg"></i> </a>
+      </div>
+     </div>
+    </div>
+    <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+     <p>© 2025 AutoPrime Concessionária. Todos os direitos reservados.</p>
+    </div>
+   </div>
+  </footer><!-- Floating WhatsApp Button -->
+  <div class="floating-whatsapp"><button onclick="openWhatsApp('Floating Button')" class="w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center"> <i class="fab fa-whatsapp text-white text-2xl"></i> </button>
+  </div>
+  <script>
+        // ===== SISTEMA DE RASTREAMENTO =====
+        
+        // Função para rastrear cliques
+        function trackClick(buttonType, location = '') {
+            const clickData = {
+                buttonType: buttonType,
+                location: location || window.location.pathname,
+                timestamp: new Date().toISOString(),
+                userAgent: navigator.userAgent,
+                referrer: document.referrer || 'Direct',
+                url: window.location.href
+            };
+            
+            // Enviar via postMessage se estiver em iframe
+            if (window.parent && window.parent !== window) {
+                window.parent.postMessage({
+                    type: 'TRACK_CLICK',
+                    data: clickData
+                }, '*');
+            }
+            
+            // Log local para debug
+            console.log('Click tracked:', clickData);
+        }
+        
+        // Função para rastrear leads
+        function trackLead(leadData) {
+            const enrichedLeadData = {
+                ...leadData,
+                timestamp: new Date().toISOString(),
+                userAgent: navigator.userAgent,
+                referrer: document.referrer || 'Direct',
+                currentPage: window.location.pathname,
+                url: window.location.href
+            };
+            
+            // Enviar via postMessage se estiver em iframe
+            if (window.parent && window.parent !== window) {
+                window.parent.postMessage({
+                    type: 'TRACK_LEAD',
+                    data: enrichedLeadData
+                }, '*');
+            }
+            
+            // Log local para debug
+            console.log('Lead tracked:', enrichedLeadData);
+        }
+        
+        // ===== FUNÇÕES ORIGINAIS COM RASTREAMENTO =====
+        
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('hidden');
+            
+            // Rastrear abertura do menu mobile
+            if (!menu.classList.contains('hidden')) {
+                trackClick('Mobile Menu', 'Header');
+            }
         }
         
         function scrollToSection(sectionId) {
             document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+            
+            // Rastrear navegação interna
+            trackClick('Internal Navigation', `Scroll to ${sectionId}`);
         }
         
-        function openWhatsApp() {
+        function openWhatsApp(source = 'Generic') {
+            // Rastrear clique no WhatsApp
+            trackClick('WhatsApp Button', source);
+            
             const message = "🚗 Olá! Tenho interesse nos veículos da NERY VEÍCULOS. Gostaria de mais informações sobre estoque, financiamento e condições especiais.";
             const whatsappUrl = `https://wa.me/5511985983781?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
         }
         
         function requestQuote(carModel) {
+            // Rastrear consulta de veículo específico
+            trackClick('Vehicle Consultation', `${carModel} - Estoque`);
+            
             const message = `Olá! Tenho interesse no ${carModel}. Gostaria de mais informações sobre preço, financiamento e disponibilidade.`;
             const whatsappUrl = `https://wa.me/5511985983781?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
@@ -975,11 +821,22 @@
         function submitForm(event) {
             event.preventDefault();
             
-            const nome = document.getElementById('nome').value;
-            const telefone = document.getElementById('telefone').value;
-            const email = document.getElementById('email').value;
-            const interesse = document.getElementById('interesse').value;
-            const mensagem = document.getElementById('mensagem').value;
+            const formData = new FormData(event.target);
+            const nome = formData.get('nome');
+            const telefone = formData.get('telefone');
+            const email = formData.get('email');
+            const interesse = formData.get('interesse');
+            const mensagem = formData.get('mensagem');
+            
+            // Rastrear lead do formulário
+            trackLead({
+                name: nome,
+                phone: telefone,
+                email: email,
+                interest: interesse,
+                message: mensagem,
+                source: 'Formulário de Contato'
+            });
             
             const whatsappMessage = `*Nova Solicitação - Nery Veículos*
             
@@ -995,14 +852,17 @@ Aguardo retorno para mais informações!`;
             window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
             
             // Show success message
-            alert('Solicitação enviada! Nossa equipe entrará em contato em breve.');
+            const successMessage = document.createElement('div');
+            successMessage.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+            successMessage.textContent = 'Solicitação enviada! Nossa equipe entrará em contato em breve.';
+            document.body.appendChild(successMessage);
+            
+            setTimeout(() => {
+                successMessage.remove();
+            }, 5000);
             
             // Reset form
-            document.getElementById('nome').value = '';
-            document.getElementById('telefone').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('interesse').value = '';
-            document.getElementById('mensagem').value = '';
+            event.target.reset();
         }
         
         // Smooth scroll for anchor links
@@ -1051,16 +911,19 @@ Aguardo retorno para mais informações!`;
         function nextCar() {
             currentCarIndex = (currentCarIndex + 1) % totalCars;
             updateCarousel();
+            trackClick('Carousel Navigation', 'Next Car');
         }
         
         function previousCar() {
             currentCarIndex = (currentCarIndex - 1 + totalCars) % totalCars;
             updateCarousel();
+            trackClick('Carousel Navigation', 'Previous Car');
         }
         
         function goToCar(index) {
             currentCarIndex = index;
             updateCarousel();
+            trackClick('Carousel Navigation', `Go to Car ${index + 1}`);
         }
         
         // Auto-play do carrossel (opcional)
@@ -1097,6 +960,9 @@ Aguardo retorno para mais informações!`;
                     }
                 });
             }, 800);
+            
+            // Track banner navigation
+            trackClick('Banner Navigation', direction);
         }
         
         // Auto-change banner images every 4 seconds
@@ -1121,6 +987,58 @@ Aguardo retorno para mais informações!`;
                 navbar.classList.add('border-gray-800');
             }
         });
+        
+        // ===== RASTREAMENTO AUTOMÁTICO DE EVENTOS =====
+        
+        // Rastrear tempo na página
+        let pageStartTime = Date.now();
+        
+        window.addEventListener('beforeunload', function() {
+            const timeOnPage = Math.round((Date.now() - pageStartTime) / 1000);
+            trackClick('Page Exit', `Time on page: ${timeOnPage}s`);
+        });
+        
+        // Rastrear scroll depth
+        let maxScrollDepth = 0;
+        
+        window.addEventListener('scroll', function() {
+            const scrollDepth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+            if (scrollDepth > maxScrollDepth) {
+                maxScrollDepth = scrollDepth;
+                
+                // Rastrear marcos de scroll
+                if (maxScrollDepth >= 25 && maxScrollDepth < 50) {
+                    trackClick('Scroll Depth', '25%');
+                } else if (maxScrollDepth >= 50 && maxScrollDepth < 75) {
+                    trackClick('Scroll Depth', '50%');
+                } else if (maxScrollDepth >= 75 && maxScrollDepth < 90) {
+                    trackClick('Scroll Depth', '75%');
+                } else if (maxScrollDepth >= 90) {
+                    trackClick('Scroll Depth', '90%');
+                }
+            }
+        });
+        
+        // Rastrear carregamento da página
+        window.addEventListener('load', function() {
+            trackClick('Page Load', 'Complete');
+        });
+        
+        // Rastrear origem do tráfego
+        document.addEventListener('DOMContentLoaded', function() {
+            const referrer = document.referrer;
+            let trafficSource = 'Direct';
+            
+            if (referrer) {
+                if (referrer.includes('google')) trafficSource = 'Google';
+                else if (referrer.includes('facebook')) trafficSource = 'Facebook';
+                else if (referrer.includes('instagram')) trafficSource = 'Instagram';
+                else if (referrer.includes('whatsapp')) trafficSource = 'WhatsApp';
+                else trafficSource = 'Referral';
+            }
+            
+            trackClick('Traffic Source', trafficSource);
+        });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'999b2cd7c6a5f1f2',t:'MTc2MjMzMzM3Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'999b574fe431cd6d',t:'MTc2MjMzNTExNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
