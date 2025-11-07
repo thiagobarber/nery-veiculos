@@ -3,1042 +3,1384 @@
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nery Veículos - Seminovos e Usados</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <title>Nery Veículos – Seminovos e Usados</title>
+  <script src="/_sdk/element_sdk.js"></script>
   <style>
-        body {
-            box-sizing: border-box;
-        }
-        
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
-        
-        * {
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        .font-luxury {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-        
-        .font-heading {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-        }
-        
-        .font-body {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 400;
-            line-height: 1.6;
-        }
-        
-        .font-button {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            letter-spacing: 0.02em;
-            text-transform: uppercase;
-        }
-        
-        .text-shadow-luxury {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-        }
-        
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .gradient-red {
-            background: linear-gradient(135deg, #DC2626, #EF4444, #F87171);
-            box-shadow: 0 8px 32px rgba(220, 38, 38, 0.3);
-        }
-        
-        .gradient-blue {
-            background: linear-gradient(135deg, #1E40AF, #3B82F6, #60A5FA);
-            color: #fff;
-            box-shadow: 0 8px 32px rgba(59, 130, 246, 0.4);
-        }
-        
-        .gradient-silver {
-            background: linear-gradient(135deg, #C0C0C0, #E5E7EB, #F3F4F6);
-            color: #000;
-            box-shadow: 0 8px 32px rgba(192, 192, 192, 0.3);
-        }
-        
-        .gradient-premium {
-            background: linear-gradient(135deg, #1a1a1a, #2d2d2d, #1a1a1a);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-        }
-        
-        /* Animated Background */
-        body {
-            background: #000;
-            position: relative;
-            overflow-x: hidden;
-        }
-        
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(30, 64, 175, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-                linear-gradient(135deg, #000000 0%, #0a0a0a 25%, #000000 50%, #0f0f0f 75%, #000000 100%);
-            animation: backgroundFlow 20s ease-in-out infinite;
-            z-index: -2;
-        }
-        
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(45deg, transparent 0%, rgba(212, 175, 55, 0.03) 25%, transparent 50%, rgba(220, 38, 38, 0.02) 75%, transparent 100%);
-            animation: gradientShift 15s ease-in-out infinite reverse;
-            z-index: -1;
-        }
-        
-        @keyframes backgroundFlow {
-            0%, 100% {
-                background: 
-                    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 20%, rgba(30, 64, 175, 0.1) 0%, transparent 50%),
-                    radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-                    linear-gradient(135deg, #000000 0%, #0a0a0a 25%, #000000 50%, #0f0f0f 75%, #000000 100%);
-            }
-            25% {
-                background: 
-                    radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.12) 0%, transparent 50%),
-                    radial-gradient(circle at 20% 80%, rgba(30, 64, 175, 0.08) 0%, transparent 50%),
-                    radial-gradient(circle at 60% 60%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
-                    linear-gradient(225deg, #000000 0%, #0f0f0f 25%, #000000 50%, #0a0a0a 75%, #000000 100%);
-            }
-            50% {
-                background: 
-                    radial-gradient(circle at 60% 40%, rgba(59, 130, 246, 0.18) 0%, transparent 50%),
-                    radial-gradient(circle at 40% 60%, rgba(30, 64, 175, 0.12) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
-                    linear-gradient(315deg, #000000 0%, #0a0a0a 25%, #000000 50%, #0f0f0f 75%, #000000 100%);
-            }
-            75% {
-                background: 
-                    radial-gradient(circle at 40% 60%, rgba(59, 130, 246, 0.14) 0%, transparent 50%),
-                    radial-gradient(circle at 60% 40%, rgba(30, 64, 175, 0.09) 0%, transparent 50%),
-                    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.07) 0%, transparent 50%),
-                    linear-gradient(45deg, #000000 0%, #0f0f0f 25%, #000000 50%, #0a0a0a 75%, #000000 100%);
-            }
-        }
-        
-        @keyframes gradientShift {
-            0%, 100% {
-                background: linear-gradient(45deg, transparent 0%, rgba(212, 175, 55, 0.03) 25%, transparent 50%, rgba(220, 38, 38, 0.02) 75%, transparent 100%);
-            }
-            33% {
-                background: linear-gradient(135deg, transparent 0%, rgba(220, 38, 38, 0.02) 25%, transparent 50%, rgba(212, 175, 55, 0.04) 75%, transparent 100%);
-            }
-            66% {
-                background: linear-gradient(225deg, transparent 0%, rgba(212, 175, 55, 0.02) 25%, transparent 50%, rgba(220, 38, 38, 0.03) 75%, transparent 100%);
-            }
-        }
-        
-        .hero-bg {
-            background: transparent;
-            position: relative;
-        }
-        
-        .hero-bg::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(ellipse at center, rgba(212, 175, 55, 0.1) 0%, transparent 70%),
-                linear-gradient(45deg, transparent 30%, rgba(220, 38, 38, 0.05) 50%, transparent 70%);
-            animation: heroShimmer 12s ease-in-out infinite;
-        }
-        
-        @keyframes heroShimmer {
-            0%, 100% { 
-                opacity: 0.4;
-                transform: translateX(0%);
-            }
-            50% { 
-                opacity: 0.8;
-                transform: translateX(2%);
-            }
-        }
-        
-        .car-card:hover {
-            transform: translateY(-8px);
-            transition: all 0.4s ease;
-        }
-        
-        .feature-icon:hover {
-            transform: scale(1.1);
-            transition: all 0.3s ease;
-        }
-        
-        .pulse-animation {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        
-        .floating-whatsapp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            animation: bounce 2s infinite;
-        }
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
-        }
-        
-        .testimonial-card {
-            background: linear-gradient(145deg, #1f2937, #374151);
-        }
-        
-        .scroll-smooth {
-            scroll-behavior: smooth;
-        }
-        
-        .car-image {
-            background: linear-gradient(45deg, #374151, #4B5563);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        /* Fade Banner Animation */
-        .banner-container {
-            position: relative;
-            width: 100%;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .banner-item {
-            position: absolute;
-            display: flex;
-            align-items: center;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            opacity: 0;
-            animation: fadeInOut 16s infinite;
-            white-space: nowrap;
-        }
-        
-        .banner-item:nth-child(1) { animation-delay: 0s; }
-        .banner-item:nth-child(2) { animation-delay: 2s; }
-        .banner-item:nth-child(3) { animation-delay: 4s; }
-        .banner-item:nth-child(4) { animation-delay: 6s; }
-        .banner-item:nth-child(5) { animation-delay: 8s; }
-        .banner-item:nth-child(6) { animation-delay: 10s; }
-        .banner-item:nth-child(7) { animation-delay: 12s; }
-        .banner-item:nth-child(8) { animation-delay: 14s; }
-        
-        .banner-icon {
-            margin-right: 0.75rem;
-            font-size: 1.1rem;
-        }
-        
-        @keyframes fadeInOut {
-            0%, 12.5%, 87.5%, 100% {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            25%, 75% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Responsive banner adjustments */
-        @media (max-width: 768px) {
-            .banner-item {
-                font-size: 0.9rem;
-            }
-            
-            .banner-icon {
-                font-size: 1rem;
-            }
-            
-            #home {
-                height: 50vh !important;
-                min-height: 400px !important;
-            }
-        }
-        
-        @media (min-width: 769px) {
-            #home {
-                height: 70vh !important;
-                min-height: 500px !important;
-            }
-        }
-        
-        /* Individual Banner Image Styles */
-        .banner-image-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            transform: translateX(100%);
-            transition: transform 0.8s ease-in-out;
-        }
-        
-        .banner-image-container.active {
-            transform: translateX(0);
-        }
-        
-        .banner-image-container.prev {
-            transform: translateX(-100%);
-        }
-        
-        .banner-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            image-rendering: auto;
-            image-rendering: smooth;
-            image-rendering: -webkit-optimize-contrast;
-            filter: contrast(1.1) saturate(1.1) brightness(1.15);
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-        }
-        
-        /* Banner Navigation Arrows */
-        .banner-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 20;
-            font-size: 18px;
-        }
-        
-        .banner-nav:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-50%) scale(1.1);
-        }
-        
-        .banner-nav-left {
-            left: 20px;
-        }
-        
-        .banner-nav-right {
-            right: 20px;
-        }
-    </style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      color: #2c3e50;
+      background: #f8f9fa;
+      scroll-behavior: smooth;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      position: static;
+      width: 100%;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+      padding: 1rem 1rem;
+      border-bottom: 2px solid rgba(255,255,255,0.08);
+      box-sizing: border-box;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.15);
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .top-bar::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+      animation: shimmer 3s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    .top-bar-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .company-name {
+      font-size: 1rem;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+    }
+
+    .company-name::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #3b82f6);
+      border-radius: 2px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .contact-item {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.95);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(5px);
+    }
+
+    .contact-item:hover {
+      color: #ffffff;
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.2);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+    }
+
+
+
+    /* Header */
+    header {
+      position: static;
+      background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      padding: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .header-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .company-logo {
+      height: 100px;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(1.1) contrast(1.1);
+      transition: all 0.3s ease;
+    }
+
+    .company-logo:hover {
+      transform: scale(1.05);
+    }
+
+    .header-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header-left {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .header-center {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      letter-spacing: 0.5px;
+    }
+
+    .location {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 0;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    nav {
+      display: flex;
+      gap: 0.3rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+    }
+
+    nav a {
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      flex: 1;
+      text-align: center;
+      min-width: 0;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    nav a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: left 0.5s ease;
+    }
+
+    nav a:hover {
+      background: rgba(255,255,255,0.1);
+      color: #ffffff;
+      border-color: rgba(255,255,255,0.2);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    nav a:hover::before {
+      left: 100%;
+    }
+
+    nav a:active {
+      transform: translateY(0);
+    }
+
+    /* Container principal */
+    main {
+      padding-top: 2rem;
+    }
+
+    /* Container principal */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Seção Hero */
+    .hero {
+      background: #ffffff;
+      padding: 2rem 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .hero-image-container {
+      width: 100%;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 250px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px dashed #dee2e6;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .thumbnail-gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+    }
+
+    .thumbnail {
+      height: 60px;
+      background: #f8f9fa;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #dee2e6;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .thumbnail:hover {
+      border-color: #25d366;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+    }
+
+    .thumbnail.active {
+      border-color: #25d366;
+      background: rgba(37, 211, 102, 0.1);
+      box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+    }
+
+    .thumbnail svg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-info {
+      flex: 1;
+    }
+
+    .hero h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: #1a1a1a;
+    }
+
+    .hero h2 {
+      font-size: 1.1rem;
+      color: #6c757d;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #27ae60;
+      margin-bottom: 1.5rem;
+    }
+
+    .specs-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .chip {
+      background: #e9ecef;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: #495057;
+    }
+
+    .cta-button {
+      display: block;
+      width: 100%;
+      background: #25d366;
+      color: #ffffff;
+      text-align: center;
+      padding: 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: background 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      background: #20ba5a;
+    }
+
+
+
+    /* Cards de conteúdo */
+    .content-card {
+      background: #ffffff;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .content-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: #1a1a1a;
+    }
+
+    /* Tabela de detalhes */
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.8rem;
+      background: #f8f9fa;
+      border-radius: 4px;
+    }
+
+    .detail-label {
+      font-weight: 600;
+      color: #495057;
+    }
+
+    .detail-value {
+      color: #6c757d;
+    }
+
+    /* Descrição */
+    .description p {
+      line-height: 1.6;
+      color: #495057;
+      margin-bottom: 1rem;
+    }
+
+    /* Opcionais */
+    .optionals-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+    }
+
+    .optional-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.8rem;
+      background: #f8f9fa;
+      border-radius: 4px;
+    }
+
+    .optional-icon {
+      width: 24px;
+      height: 24px;
+      background: #27ae60;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    /* Seção de financiamento */
+    .financing {
+      background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+      color: #ffffff;
+      padding: 2rem 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .financing h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .financing p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.95;
+    }
+
+    .financing .cta-button {
+      background: #ffffff;
+      color: #667eea;
+    }
+
+    .financing .cta-button:hover {
+      background: #f8f9fa;
+    }
+
+    /* Footer */
+    footer {
+      background: #2c3e50;
+      color: #ffffff;
+      padding: 0;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 3rem 1rem;
+    }
+
+    .footer-section {
+      text-align: left;
+    }
+
+    .footer-section h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .footer-section p {
+      line-height: 1.6;
+      opacity: 0.9;
+      margin-bottom: 1rem;
+    }
+
+    .footer-logo {
+      height: 60px;
+      width: auto;
+      margin-bottom: 1rem;
+      filter: brightness(1.2);
+    }
+
+    .contact-list {
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-item-footer {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .map-container {
+      margin-top: 1rem;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .social-links {
+      margin-bottom: 2rem;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 0.8rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      background: rgba(255,255,255,0.1);
+      margin-bottom: 0.5rem;
+    }
+
+    .social-link:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateX(5px);
+    }
+
+    .footer-cta {
+      text-align: center;
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-cta p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    .footer-whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #25d366;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    }
+
+    .footer-whatsapp-btn:hover {
+      background: #20ba5a;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    .footer-bottom {
+      background: rgba(0,0,0,0.2);
+      padding: 1.5rem;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-bottom p {
+      margin: 0;
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+
+    /* Mobile/Desktop visibility */
+    .mobile-only {
+      display: block;
+    }
+
+    .desktop-only {
+      display: none;
+    }
+
+    /* Mobile Menu Styles */
+    .mobile-menu-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .hamburger-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      width: 30px;
+      height: 30px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hamburger-btn span {
+      width: 20px;
+      height: 2px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger-btn.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger-btn.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger-btn.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .mobile-menu {
+      display: none;
+      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 1rem 0;
+    }
+
+    .mobile-menu.active {
+      display: block;
+    }
+
+    .mobile-menu nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding: 0 1rem;
+    }
+
+    .mobile-menu nav a {
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 0.8rem 1rem;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .mobile-menu nav a:hover {
+      background: rgba(255,255,255,0.1);
+      color: #ffffff;
+    }
+
+    /* Responsivo para tablets */
+    @media (min-width: 768px) {
+      .mobile-only {
+        display: none;
+      }
+
+      .desktop-only {
+        display: block;
+      }
+
+      .top-bar {
+        padding: 1.2rem 2rem;
+      }
+
+      .top-bar-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .company-name {
+        font-size: 1.1rem;
+        letter-spacing: 2.5px;
+      }
+
+      .company-name::after {
+        width: 80px;
+        height: 3px;
+      }
+
+      .contact-info {
+        flex-direction: row;
+        gap: 1.5rem;
+      }
+
+      .contact-item {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+      }
+
+      header {
+        padding: 1.5rem 2rem;
+      }
+
+      .company-logo {
+        height: 130px;
+      }
+
+      .location {
+        font-size: 0.95rem;
+      }
+
+      nav {
+        gap: 0.5rem;
+      }
+
+      nav a {
+        font-size: 0.85rem;
+        padding: 0.6rem 1rem;
+        flex: none;
+      }
+
+      main {
+        padding-top: 2rem;
+      }
+
+      .hero-content {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+
+      .hero-image-container {
+        width: 300px;
+        flex-shrink: 0;
+      }
+
+      .hero-image {
+        width: 100%;
+        height: 200px;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero h2 {
+        font-size: 1.3rem;
+      }
+
+      .price {
+        font-size: 2.5rem;
+      }
+
+
+
+      .details-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .optionals-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cta-button {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+    }
+
+    /* Responsivo para desktop */
+    @media (min-width: 1024px) {
+      .top-bar {
+        padding: 1.5rem 3rem;
+      }
+
+      .top-bar-content {
+        gap: 3rem;
+      }
+
+      .company-name {
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+      }
+
+      .company-name::after {
+        width: 100px;
+        height: 3px;
+      }
+
+      .contact-info {
+        gap: 2rem;
+      }
+
+      .contact-item {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+      }
+
+      header {
+        padding: 2rem 3rem;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex: 1;
+      }
+
+      .header-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+      }
+
+      .company-logo {
+        height: 130px;
+      }
+
+      .logo {
+        font-size: 1.6rem;
+        margin-bottom: 0;
+      }
+
+      .location {
+        margin-bottom: 0;
+        font-size: 1rem;
+      }
+
+      nav {
+        margin-left: auto;
+        gap: 0.8rem;
+        flex: 1;
+        justify-content: flex-end;
+      }
+
+      nav a {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+      }
+
+      main {
+        padding-top: 2rem;
+      }
+
+      .container {
+        padding: 0 2rem;
+      }
+
+      .hero-image-container {
+        width: 400px;
+      }
+
+      .hero-image {
+        width: 100%;
+        height: 280px;
+      }
+
+
+
+      .optionals-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 3rem;
+      }
+    }
+
+    /* WhatsApp Flutuante */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      text-decoration: none;
+      color: white;
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+    }
+
+    .whatsapp-float svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      }
+      50% {
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.8), 0 0 0 10px rgba(37, 211, 102, 0.1);
+      }
+      100% {
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      }
+    }
+  </style>
   <style>@view-transition { navigation: auto; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
-  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
  </head>
- <body class="bg-black text-white scroll-smooth"><!-- Header -->
-  <header id="navbar" class="fixed top-0 w-full bg-black/95 backdrop-blur-sm z-50 border-b border-gray-800 transition-all duration-300">
-   <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-    <div class="flex items-center space-x-4">
-     <div class="w-20 h-20 flex items-center justify-center"><img src="https://i.imgur.com/vNuK6vp.png" alt="Nery Veículos" class="w-full h-full object-contain" onerror="this.src=''; this.alt='Logo não disponível'; this.style.display='none';">
-     </div>
+ <body><!-- Top Bar Mobile -->
+  <div class="top-bar mobile-only">
+   <div class="top-bar-content"><span class="contact-item">
+     <svg width="14" height="14" viewbox="0 0 24 24" fill="currentColor" style="margin-right: 0.3rem;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+     </svg> (11) 98598-3781 </span>
+   </div>
+  </div><!-- Top Bar Desktop -->
+  <div class="top-bar desktop-only">
+   <div class="top-bar-content">
+    <div class="company-name">
+     NERY VEÍCULOS
     </div>
-    <nav class="hidden md:flex space-x-8"><a href="#home" class="hover:text-red-400 transition-colors">Home</a> <a href="#estoque" class="hover:text-red-400 transition-colors">Estoque</a> <a href="#financiamento" class="hover:text-red-400 transition-colors">Financiamento</a> <a href="#contato" class="hover:text-red-400 transition-colors">Contato</a>
-    </nav><button onclick="openWhatsApp('Header - Consultor Exclusivo')" class="gradient-blue text-white px-8 py-3 rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-xl"> Consultor Exclusivo </button> <!-- Mobile Menu Button --> <button class="md:hidden text-white" onclick="toggleMobileMenu()"> <i class="fas fa-bars text-xl"></i> </button>
+    <div class="contact-info"><span class="contact-item">
+      <svg width="14" height="14" viewbox="0 0 24 24" fill="currentColor" style="margin-right: 0.3rem;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+      </svg> (11) 98598-3781 </span> <span class="contact-item">
+      <svg width="14" height="14" viewbox="0 0 24 24" fill="currentColor" style="margin-right: 0.3rem;"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+      </svg> neryveiculos10@gmail.com </span>
+    </div>
+   </div>
+  </div>
+  <header>
+   <div class="header-content">
+    <div class="header-left"><img src="https://i.imgur.com/8pUQ53g.png" alt="Nery Veículos Logo" class="company-logo" onerror="this.style.display='none';">
+    </div>
+    <div class="header-center desktop-only">
+     <div class="location" id="store-location">
+      <svg width="20" height="20" viewbox="0 0 24 24" fill="none" style="margin-right: 0.5rem;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="rgba(255,255,255,0.7)" />
+      </svg> Av Marginal 365, Jd Ouro Preto - Francisco Morato
+     </div>
+    </div><!-- Menu Hamburger Mobile -->
+    <div class="mobile-menu-container mobile-only"><button class="hamburger-btn" id="hamburger-btn"> <span></span> <span></span> <span></span> </button>
+    </div><!-- Navigation Desktop -->
+    <nav class="desktop-only"><a href="#veiculo">Veículo</a> <a href="#opcionais">Opcionais</a> <a href="#financiamento">Financiamento</a> <a href="#contato">Contato</a>
+    </nav>
    </div><!-- Mobile Menu -->
-   <div id="mobileMenu" class="hidden md:hidden bg-black/95 border-t border-gray-800">
-    <nav class="container mx-auto px-4 py-4 flex flex-col space-y-4"><a href="#home" class="hover:text-red-400 transition-colors" onclick="toggleMobileMenu()">Home</a> <a href="#estoque" class="hover:text-red-400 transition-colors" onclick="toggleMobileMenu()">Estoque</a> <a href="#financiamento" class="hover:text-red-400 transition-colors" onclick="toggleMobileMenu()">Financiamento</a> <a href="#contato" class="hover:text-red-400 transition-colors" onclick="toggleMobileMenu()">Contato</a>
+   <div class="mobile-menu" id="mobile-menu">
+    <nav><a href="#veiculo">Veículo</a> <a href="#opcionais">Opcionais</a> <a href="#financiamento">Financiamento</a> <a href="#contato">Contato</a>
     </nav>
    </div>
-  </header><!-- Fade Banner -->
-  <div class="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 text-white py-4 banner-container relative shadow-lg">
-   <div class="banner-item"><i class="fas fa-star banner-icon text-yellow-400"></i> <span>FINANCIAMENTO APROVADO EM 24H</span>
-   </div>
-   <div class="banner-item"><i class="fas fa-shield-alt banner-icon text-green-400"></i> <span>GARANTIA DE PROCEDÊNCIA</span>
-   </div>
-   <div class="banner-item"><i class="fas fa-handshake banner-icon text-yellow-400"></i> <span>MELHOR PREÇO GARANTIDO</span>
-   </div>
-   <div class="banner-item"><i class="fab fa-whatsapp banner-icon text-green-400"></i> <span>ATENDIMENTO 24/7</span>
-   </div>
-   <div class="banner-item"><i class="fas fa-car banner-icon text-red-400"></i> <span>VEÍCULOS REVISADOS</span>
-   </div>
-   <div class="banner-item"><i class="fas fa-percentage banner-icon text-yellow-400"></i> <span>TAXAS A PARTIR DE 1,2%</span>
-   </div>
-   <div class="banner-item"><i class="fas fa-tools banner-icon text-blue-300"></i> <span>MANUTENÇÃO GARANTIDA</span>
-   </div>
-   <div class="banner-item"><i class="fas fa-medal banner-icon text-yellow-400"></i> <span>QUALIDADE CERTIFICADA</span>
-   </div>
-  </div><!-- Hero Section -->
-  <section id="home" class="hero-bg min-h-full flex items-center justify-center text-center py-20 md:py-32 relative overflow-hidden bg-black"><!-- Banner de imagens individuais -->
-   <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-    <div class="banner-image-container active"><img src="https://imgur.com/NOJ5A5D.jpg" alt="Banner 1" class="banner-image" onerror="this.style.display='none';">
-    </div>
-    <div class="banner-image-container"><img src="https://imgur.com/M0Osgwg.jpg" alt="Banner 2" class="banner-image" onerror="this.style.display='none';">
-    </div><!-- Setas de navegação do banner - ocultas no mobile --> <button onclick="changeBannerImage('prev')" class="banner-nav banner-nav-left hidden md:flex"> <i class="fas fa-chevron-left"></i> </button> <button onclick="changeBannerImage('next')" class="banner-nav banner-nav-right hidden md:flex"> <i class="fas fa-chevron-right"></i> </button>
-   </div><!-- Overlay escuro para melhor legibilidade do texto -->
-   <div class="absolute top-0 left-0 w-full h-full bg-black/20 z-5"></div><!-- Conteúdo principal do hero -->
-   <div class="relative z-10 px-4 max-w-4xl mx-auto">
-   </div><!-- Automotive floating elements - reduzidos no mobile -->
-   <div class="absolute top-20 left-4 md:left-10 w-6 h-6 md:w-8 md:h-8 border-2 border-blue-400 rounded-full opacity-40 animate-pulse flex items-center justify-center">
-    <div class="w-1 h-1 md:w-2 md:h-2 bg-blue-400 rounded-full"></div>
-   </div>
-   <div class="absolute top-32 md:top-40 right-4 md:right-20 w-8 h-8 md:w-12 md:h-12 border border-blue-400 rounded-full opacity-30 animate-pulse" style="animation-delay: 1s;">
-    <div class="w-full h-full rounded-full border-2 border-transparent border-t-blue-400 animate-spin" style="animation-duration: 3s;"></div>
-   </div>
-   <div class="absolute bottom-24 md:bottom-32 left-1/4 opacity-20 animate-pulse" style="animation-delay: 2s;">
-    <svg width="16" height="16" md:width="24" md:height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor" class="text-blue-400" />
-    </svg>
-   </div>
-   <div class="absolute bottom-16 md:bottom-20 right-1/3 w-4 h-4 md:w-6 md:h-6 opacity-25 animate-pulse" style="animation-delay: 0.5s;">
-    <div class="w-full h-full border-2 border-blue-500 transform rotate-45"></div>
-   </div><!-- Speed lines effect -->
-   <div class="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400/20 to-transparent opacity-30"></div>
-   <div class="absolute top-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400/15 to-transparent opacity-25" style="animation-delay: 1s;"></div>
-  </section><!-- CTA Buttons Section -->
-  <section class="py-16 bg-black">
-   <div class="container mx-auto px-4 text-center">
-    <div class="flex flex-col sm:flex-row gap-6 justify-center max-w-2xl mx-auto"><button onclick="openWhatsApp('CTA Section - Falar WhatsApp')" class="gradient-blue text-white px-8 py-4 rounded-2xl text-lg font-button hover:scale-105 transition-all duration-300 shadow-2xl"> FALAR NO WHATSAPP </button> <button onclick="scrollToSection('estoque')" class="glass-effect text-white px-8 py-4 rounded-2xl text-lg font-button hover:scale-105 transition-all duration-300 border-2 border-blue-400"> VER ESTOQUE </button>
-    </div>
-   </div>
-  </section><!-- Estoque -->
-  <section id="estoque" class="py-24 bg-black relative">
-   <div class="container mx-auto px-4">
-    <div class="text-center mb-20"><span class="inline-block px-6 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-semibold rounded-full mb-6"> ESTOQUE ATUALIZADO </span>
-     <h2 class="text-2xl md:text-4xl font-bold font-luxury mb-4 md:mb-6">NOSSOS VEÍCULOS</h2>
-     <p class="text-base md:text-lg text-gray-300 max-w-3xl mx-auto font-body px-4">Seminovos e usados selecionados com qualidade garantida</p>
-    </div><!-- Carrossel de Veículos -->
-    <div class="relative max-w-6xl mx-auto"><!-- Botões de navegação --> <button onclick="previousCar()" class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110"> <i class="fas fa-chevron-left text-white text-xl"></i> </button> <button onclick="nextCar()" class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110"> <i class="fas fa-chevron-right text-white text-xl"></i> </button> <!-- Container do carrossel -->
-     <div class="overflow-hidden rounded-2xl">
-      <div id="carCarousel" class="flex transition-transform duration-500 ease-in-out"><!-- Veículo 1 -->
-       <div class="w-full flex-shrink-0 px-4">
-        <div class="car-card gradient-premium rounded-2xl overflow-hidden shadow-2xl hover:shadow-blue-400/20 transition-all duration-500 max-w-md mx-auto">
-         <div class="relative"><img src="https://imgur.com/dI6WlRf.jpg" alt="Honda Civic 2019" class="w-full h-64 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="w-full h-64 bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-gray-400" style="display: none;">
-           <div class="text-center"><i class="fas fa-car text-4xl mb-2"></i>
-            <p class="text-sm">Honda Civic 2019</p>
-           </div>
-          </div>
-          <div class="absolute top-4 right-4 bg-blue-400 text-white px-4 py-2 rounded-full text-sm font-bold">
-           2019
-          </div>
-         </div>
-         <div class="p-4 md:p-8">
-          <h3 class="text-xl md:text-3xl font-bold font-heading mb-2 md:mb-3">Honda Civic 2019</h3>
-          <p class="text-gray-300 mb-4 md:mb-6 font-body text-sm md:text-lg">Sedan • Automático • Completo</p>
-          <div class="flex items-center justify-between">
-           <div>
-            <p class="text-2xl md:text-4xl font-bold text-blue-400">R$ 89.900</p>
-            <p class="text-xs md:text-sm text-gray-400">ou 48x de R$ 2.247</p>
-           </div><button onclick="requestQuote('Honda Civic 2019')" class="gradient-blue text-white px-4 md:px-8 py-3 md:py-4 rounded-xl font-button hover:scale-105 transition-all duration-300 text-xs md:text-sm"> CONSULTAR </button>
-          </div>
-         </div>
+  </header>
+  <main>
+   <div class="container"><!-- Hero Section -->
+    <section class="hero" id="veiculo">
+     <div class="hero-content">
+      <div class="hero-image-container">
+       <div class="hero-image" id="main-image"><img src="https://i.imgur.com/B3RpTft.jpg" alt="Foto Principal" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div style="position: absolute; font-size: 0.9rem; color: #6c757d; margin-top: 100px; display: none;">
+         Foto Principal - Imagem não disponível
         </div>
-       </div><!-- Veículo 2 -->
-       <div class="w-full flex-shrink-0 px-4">
-        <div class="car-card gradient-premium rounded-2xl overflow-hidden shadow-2xl hover:shadow-blue-400/20 transition-all duration-500 max-w-md mx-auto">
-         <div class="relative"><img src="https://imgur.com/1jsMxh5.jpg" alt="Toyota Corolla 2020" class="w-full h-64 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="w-full h-64 bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-gray-400" style="display: none;">
-           <div class="text-center"><i class="fas fa-car text-4xl mb-2"></i>
-            <p class="text-sm">Toyota Corolla 2020</p>
-           </div>
-          </div>
-          <div class="absolute top-4 right-4 bg-blue-400 text-white px-4 py-2 rounded-full text-sm font-bold">
-           2020
-          </div>
-         </div>
-         <div class="p-4 md:p-8">
-          <h3 class="text-xl md:text-3xl font-bold font-luxury mb-2 md:mb-3">Toyota Corolla 2020</h3>
-          <p class="text-gray-300 mb-4 md:mb-6 text-sm md:text-lg">Sedan • CVT • XEI</p>
-          <div class="flex items-center justify-between">
-           <div>
-            <p class="text-2xl md:text-4xl font-bold text-blue-400">R$ 95.500</p>
-            <p class="text-xs md:text-sm text-gray-400">ou 48x de R$ 2.387</p>
-           </div><button onclick="requestQuote('Toyota Corolla 2020')" class="gradient-blue text-white px-4 md:px-8 py-3 md:py-4 rounded-xl font-button hover:scale-105 transition-all duration-300 text-xs md:text-sm"> CONSULTAR </button>
-          </div>
-         </div>
+       </div>
+       <div class="thumbnail-gallery">
+        <div class="thumbnail active" data-image="0"><img src="https://i.imgur.com/B3RpTft.jpg" alt="Foto Principal" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;" onerror="this.style.display='none';">
         </div>
-       </div><!-- Veículo 3 -->
-       <div class="w-full flex-shrink-0 px-4">
-        <div class="car-card gradient-premium rounded-2xl overflow-hidden shadow-2xl hover:shadow-blue-400/20 transition-all duration-500 max-w-md mx-auto">
-         <div class="relative"><img src="https://imgur.com/dCuLP1V.jpg" alt="Chevrolet Onix 2021" class="w-full h-64 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="w-full h-64 bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-gray-400" style="display: none;">
-           <div class="text-center"><i class="fas fa-car text-4xl mb-2"></i>
-            <p class="text-sm">Chevrolet Onix 2021</p>
-           </div>
-          </div>
-          <div class="absolute top-4 right-4 bg-blue-400 text-white px-4 py-2 rounded-full text-sm font-bold">
-           2021
-          </div>
-         </div>
-         <div class="p-4 md:p-8">
-          <h3 class="text-xl md:text-3xl font-bold font-luxury mb-2 md:mb-3">Chevrolet Onix 2021</h3>
-          <p class="text-gray-300 mb-4 md:mb-6 text-sm md:text-lg">Hatch • Manual • LT</p>
-          <div class="flex items-center justify-between">
-           <div>
-            <p class="text-2xl md:text-4xl font-bold text-blue-400">R$ 62.900</p>
-            <p class="text-xs md:text-sm text-gray-400">ou 48x de R$ 1.572</p>
-           </div><button onclick="requestQuote('Chevrolet Onix 2021')" class="gradient-blue text-white px-4 md:px-8 py-3 md:py-4 rounded-xl font-button hover:scale-105 transition-all duration-300 text-xs md:text-sm"> CONSULTAR </button>
-          </div>
-         </div>
+        <div class="thumbnail" data-image="1"><img src="https://i.imgur.com/ebYmbmp.jpg" alt="Vista Lateral" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;" onerror="this.style.display='none';">
+        </div>
+        <div class="thumbnail" data-image="2"><img src="https://i.imgur.com/k3HUN52.jpg" alt="Rodas" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;" onerror="this.style.display='none';">
+        </div>
+        <div class="thumbnail" data-image="3"><img src="https://i.imgur.com/5b8wkP3.jpg" alt="Interior" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;" onerror="this.style.display='none';">
         </div>
        </div>
       </div>
-     </div><!-- Indicadores -->
-     <div class="flex justify-center mt-8 space-x-3"><button onclick="goToCar(0)" class="car-indicator w-3 h-3 rounded-full bg-blue-400 transition-all duration-300"></button> <button onclick="goToCar(1)" class="car-indicator w-3 h-3 rounded-full bg-gray-600 transition-all duration-300"></button> <button onclick="goToCar(2)" class="car-indicator w-3 h-3 rounded-full bg-gray-600 transition-all duration-300"></button>
+      <div class="hero-info">
+       <h1 id="vehicle-name">Hyundai HB20</h1>
+       <h2 id="vehicle-version">HB20 1.0 FLEX – 2021</h2>
+       <div class="price" id="vehicle-price">
+        R$ 63.900,00
+       </div>
+       <div class="specs-chips"><span class="chip">Seminovo</span> <span class="chip">2021</span> <span class="chip">Manual</span> <span class="chip">Flex</span> <span class="chip">4 portas</span> <span class="chip">Hatch</span>
+       </div><a href="#" class="cta-button" id="cta-primary">Chamar no WhatsApp</a>
+      </div>
      </div>
-    </div>
-    <div class="text-center mt-16"><button onclick="openWhatsApp('Estoque - Ver Mais Veículos')" class="gradient-blue text-white px-8 md:px-12 py-4 md:py-5 rounded-2xl text-lg md:text-xl font-bold hover:scale-105 transition-all duration-300 shadow-2xl"> VER MAIS VEÍCULOS </button>
+    </section><!-- Detalhes -->
+    <section class="content-card">
+     <h3>Detalhes do veículo</h3>
+     <div class="details-grid">
+      <div class="detail-row"><span class="detail-label">Ano</span> <span class="detail-value">2021</span>
+      </div>
+      <div class="detail-row"><span class="detail-label">Motor</span> <span class="detail-value">1.0 Flex</span>
+      </div>
+      <div class="detail-row"><span class="detail-label">Câmbio</span> <span class="detail-value">Manual</span>
+      </div>
+      <div class="detail-row"><span class="detail-label">Combustível</span> <span class="detail-value">Flex</span>
+      </div>
+      <div class="detail-row"><span class="detail-label">Direção</span> <span class="detail-value">Elétrica</span>
+      </div>
+      <div class="detail-row"><span class="detail-label">Portas</span> <span class="detail-value">4</span>
+      </div>
+      <div class="detail-row"><span class="detail-label">Categoria</span> <span class="detail-value">Hatch</span>
+      </div>
+      <div class="detail-row"><span class="detail-label">Laudo Cautelar</span> <span class="detail-value">Aprovado</span>
+      </div>
+     </div>
+    </section><!-- Descrição -->
+    <section class="content-card">
+     <h3>Descrição</h3>
+     <div class="description">
+      <p id="vehicle-description">Hyundai HB20 1.0 Flex 2021 em excelente estado de conservação. Veículo econômico e confiável, perfeito para o dia a dia na cidade.</p>
+      <p>Equipado com computador de bordo, kit multimídia, volante multifuncional e ar condicionado. Direção elétrica e travas elétricas garantem conforto e praticidade.</p>
+      <p><strong>Aceitamos troca e oferecemos financiamento por análise de crédito.</strong> Laudo cautelar aprovado. Localizado na Av. Marginal 365, Jardim Ouro Preto - Francisco Morato.</p>
+     </div><a href="#" class="cta-button" id="cta-secondary">Quero falar com a Nery Veículos no WhatsApp</a>
+    </section><!-- Opcionais -->
+    <section class="content-card" id="opcionais">
+     <h3>Opcionais e equipamentos</h3>
+     <div class="optionals-grid">
+      <div class="optional-item">
+       <div class="optional-icon">
+        ✓
+       </div><span>Computador de Bordo</span>
+      </div>
+      <div class="optional-item">
+       <div class="optional-icon">
+        ✓
+       </div><span>Kit Multimídia</span>
+      </div>
+      <div class="optional-item">
+       <div class="optional-icon">
+        ✓
+       </div><span>Volante Multifuncional</span>
+      </div>
+      <div class="optional-item">
+       <div class="optional-icon">
+        ✓
+       </div><span>Retrovisor Elétrico</span>
+      </div>
+      <div class="optional-item">
+       <div class="optional-icon">
+        ✓
+       </div><span>Travas Elétricas</span>
+      </div>
+      <div class="optional-item">
+       <div class="optional-icon">
+        ✓
+       </div><span>Ar Condicionado</span>
+      </div>
+      <div class="optional-item">
+       <div class="optional-icon">
+        ✓
+       </div><span>Direção Elétrica</span>
+      </div>
+      <div class="optional-item">
+       <div class="optional-icon">
+        ✓
+       </div><span>Aceitamos Troca</span>
+      </div>
+      <div class="optional-item">
+       <div class="optional-icon">
+        ✓
+       </div><span>Financiamento Facilitado</span>
+      </div>
+      <div class="optional-item">
+       <div class="optional-icon">
+        ✓
+       </div><span>Laudo Cautelar Aprovado</span>
+      </div>
+     </div>
+    </section><!-- Financiamento -->
+    <section class="financing" id="financiamento">
+     <h3>Financiamento facilitado</h3>
+     <p>Trabalhamos com as melhores instituições financeiras do mercado. Aprovação rápida e taxas competitivas para você realizar o sonho do seu carro.</p><a href="#" class="cta-button" id="cta-financing">Simular financiamento</a>
+    </section>
+   </div>
+  </main>
+  <footer id="contato">
+   <div class="footer-content"><!-- Logo e História -->
+    <div class="footer-section"><img src="https://i.imgur.com/8pUQ53g.png" alt="Nery Veículos Logo" class="footer-logo" onerror="this.style.display='none';">
+     <h3>Nery Veículos</h3>
+     <p>Com mais de 10 anos de experiência no mercado automotivo, a Nery Veículos se consolidou como referência em seminovos e usados na região. Oferecemos veículos de qualidade com procedência garantida e atendimento personalizado para realizar o sonho do seu carro ideal.</p>
+    </div><!-- Contatos e Mapa -->
+    <div class="footer-section">
+     <h3>Contato &amp; Localização</h3>
+     <div class="contact-list">
+      <div class="contact-item-footer">
+       <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor" class="contact-icon"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+       </svg><span>(11) 98598-3781</span>
+      </div>
+      <div class="contact-item-footer">
+       <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor" class="contact-icon"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+       </svg><span>neryveiculos10@gmail.com</span>
+      </div>
+      <div class="contact-item-footer">
+       <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor" class="contact-icon"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+       </svg><span>Av Marginal 365<br>
+        Jd Ouro Preto - Francisco Morato</span>
+      </div>
+     </div>
+     <div class="map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.123456789!2d-46.7234567!3d-23.2876543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDE3JzE1LjYiUyA0NsKwNDMnMjQuNCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr" width="100%" height="150" style="border:0; border-radius: 8px;" allowfullscreen loading="lazy"></iframe>
+     </div>
+    </div><!-- Redes Sociais -->
+    <div class="footer-section">
+     <h3>Siga-nos</h3>
+     <div class="social-links"><a href="https://www.instagram.com/neryveiculos_/" target="_blank" rel="noopener noreferrer" class="social-link">
+       <svg width="24" height="24" viewbox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+       </svg><span>@neryveiculos_</span> </a>
+     </div>
+     <div class="footer-cta">
+      <p>Encontre seu carro ideal!</p><a href="https://wa.me/5511985983781?text=Olá, gostaria de conhecer os veículos disponíveis!" class="footer-whatsapp-btn">
+       <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
+       </svg> Falar no WhatsApp </a>
+     </div>
     </div>
    </div>
-  </section><!-- Financiamento -->
-  <section id="financiamento" class="py-24 bg-gray-900 relative">
-   <div class="container mx-auto px-4">
-    <div class="max-w-6xl mx-auto text-center">
-     <div class="mb-16"><span class="inline-block px-6 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-semibold rounded-full mb-6"> FINANCIAMENTO FACILITADO </span>
-      <h2 class="text-5xl font-bold font-luxury mb-6">CONDIÇÕES ESPECIAIS</h2>
-      <p class="text-2xl text-gray-300 max-w-4xl mx-auto">Aprovação rápida e condições que cabem no seu bolso</p>
-     </div>
-     <div class="grid md:grid-cols-3 gap-8 mb-16">
-      <div class="gradient-premium p-10 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300">
-       <div class="w-20 h-20 gradient-blue rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl"><span class="text-white text-2xl font-bold">%</span>
-       </div>
-       <h3 class="text-2xl font-bold font-luxury mb-4">Taxa Competitiva</h3>
-       <p class="text-4xl font-bold text-blue-400 mb-2">A partir de 1,2%</p>
-       <p class="text-gray-300">Taxas especiais</p>
-      </div>
-      <div class="gradient-premium p-10 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300">
-       <div class="w-20 h-20 gradient-blue rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl"><span class="text-white text-2xl font-bold">60x</span>
-       </div>
-       <h3 class="text-2xl font-bold font-luxury mb-4">Prazo Flexível</h3>
-       <p class="text-4xl font-bold text-blue-400 mb-2">Até 60x</p>
-       <p class="text-gray-300">Parcelas que cabem no bolso</p>
-      </div>
-      <div class="gradient-premium p-10 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300">
-       <div class="w-20 h-20 gradient-blue rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl"><span class="text-white text-2xl font-bold">R$</span>
-       </div>
-       <h3 class="text-2xl font-bold font-luxury mb-4">Entrada Facilitada</h3>
-       <p class="text-4xl font-bold text-blue-400 mb-2">Desde R$ 5.000</p>
-       <p class="text-gray-300">Condições especiais</p>
-      </div>
-     </div>
-     <div class="bg-gradient-to-r from-blue-400/10 to-blue-600/10 p-12 rounded-2xl border border-blue-400/30 mb-12 text-center">
-      <h3 class="text-3xl font-bold font-luxury mb-6 text-white">VANTAGENS NERY VEÍCULOS</h3>
-      <p class="text-xl text-gray-300 mb-10 font-body">Benefícios especiais para nossos clientes</p>
-      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-       <div class="flex flex-col items-center space-y-3 p-6 bg-black/20 rounded-xl border border-blue-400/20">
-        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-2"><i class="fas fa-clock text-white text-lg"></i>
-        </div><span class="text-lg font-semibold font-heading text-white">Aprovação em até 24 horas</span>
-       </div>
-       <div class="flex flex-col items-center space-y-3 p-6 bg-black/20 rounded-xl border border-blue-400/20">
-        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-2"><i class="fas fa-file-alt text-white text-lg"></i>
-        </div><span class="text-lg font-semibold font-heading text-white">Documentação facilitada</span>
-       </div>
-       <div class="flex flex-col items-center space-y-3 p-6 bg-black/20 rounded-xl border border-blue-400/20">
-        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-2"><i class="fas fa-tools text-white text-lg"></i>
-        </div><span class="text-lg font-semibold font-heading text-white">Veículos revisados</span>
-       </div>
-       <div class="flex flex-col items-center space-y-3 p-6 bg-black/20 rounded-xl border border-blue-400/20">
-        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-2"><i class="fas fa-user-tie text-white text-lg"></i>
-        </div><span class="text-lg font-semibold font-heading text-white">Atendimento personalizado</span>
-       </div>
-      </div>
-     </div><button onclick="openWhatsApp('Financiamento - Simular')" class="gradient-blue text-white px-12 py-5 rounded-2xl text-xl font-bold hover:scale-105 transition-all duration-300 shadow-2xl"> SIMULAR FINANCIAMENTO </button>
-    </div>
-   </div><!-- Background decoration -->
-   <div class="absolute top-0 left-0 w-full h-full opacity-5">
-    <div class="absolute top-32 left-32 w-24 h-24 border-2 border-blue-400 rounded-full"></div>
-    <div class="absolute bottom-32 right-32 w-32 h-32 border-2 border-blue-400 rounded-full"></div>
+   <div class="footer-bottom">
+    <p>© 2024 Nery Veículos – Seminovos e Usados. Todos os direitos reservados.</p>
    </div>
-  </section><!-- Depoimentos -->
-  <section class="py-20 bg-transparent">
-   <div class="container mx-auto px-4">
-    <h2 class="text-4xl font-bold text-center mb-16">O que nossos clientes dizem</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-     <div class="testimonial-card p-8 rounded-xl border border-gray-800">
-      <div class="flex items-center mb-4">
-       <div class="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center mr-4"><i class="fas fa-user text-gray-300"></i>
-       </div>
-       <div>
-        <h4 class="font-semibold">Maria Silva</h4>
-        <div class="flex text-blue-400"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i>
-        </div>
-       </div>
-      </div>
-      <p class="text-gray-300">"Excelente atendimento! Consegui financiar meu Civic com condições incríveis. Recomendo a Nery Veículos para todos!"</p>
-     </div>
-     <div class="testimonial-card p-8 rounded-xl border border-gray-800">
-      <div class="flex items-center mb-4">
-       <div class="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center mr-4"><i class="fas fa-user text-gray-300"></i>
-       </div>
-       <div>
-        <h4 class="font-semibold">João Santos</h4>
-        <div class="flex text-blue-400"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i>
-        </div>
-       </div>
-      </div>
-      <p class="text-gray-300">"Processo super rápido e transparente. Em 2 dias estava com meu carro novo na garagem. Equipe nota 10!"</p>
-     </div>
-     <div class="testimonial-card p-8 rounded-xl border border-gray-800">
-      <div class="flex items-center mb-4">
-       <div class="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center mr-4"><i class="fas fa-user text-gray-300"></i>
-       </div>
-       <div>
-        <h4 class="font-semibold">Ana Costa</h4>
-        <div class="flex text-blue-400"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i>
-        </div>
-       </div>
-      </div>
-      <p class="text-gray-300">"Melhor experiência de compra que já tive! Preço justo, atendimento personalizado e carro impecável."</p>
-     </div>
-    </div>
-   </div>
-  </section><!-- Sobre a Concessionária -->
-  <section class="py-20 bg-transparent">
-   <div class="container mx-auto px-4">
-    <div class="max-w-4xl mx-auto text-center">
-     <h2 class="text-4xl font-bold mb-8">Tradição e confiança em Francisco Morato</h2>
-     <p class="text-xl text-gray-300 mb-8">A Nery Veículos é especializada em seminovos e usados, oferecendo qualidade, transparência e as melhores condições para você realizar o sonho do carro próprio.</p>
-     <div class="grid md:grid-cols-3 gap-8 mb-12">
-      <div class="text-center">
-       <div class="text-4xl font-bold text-blue-400 mb-2">
-        1.000+
-       </div>
-       <p class="text-gray-400">Carros vendidos</p>
-      </div>
-      <div class="text-center">
-       <div class="text-4xl font-bold text-blue-400 mb-2">
-        95%
-       </div>
-       <p class="text-gray-400">Clientes satisfeitos</p>
-      </div>
-      <div class="text-center">
-       <div class="text-4xl font-bold text-blue-400 mb-2">
-        5+
-       </div>
-       <p class="text-gray-400">Anos de experiência</p>
-      </div>
-     </div>
-    </div>
-   </div>
-  </section><!-- Formulário de Contato -->
-  <section id="contato" class="py-20 bg-transparent">
-   <div class="container mx-auto px-4">
-    <div class="max-w-2xl mx-auto">
-     <h2 class="text-4xl font-bold text-center mb-8">Solicite seu Orçamento</h2>
-     <p class="text-xl text-gray-300 text-center mb-12">Preencha o formulário e nossa equipe entrará em contato</p>
-     <form onsubmit="submitForm(event)" class="bg-gray-900 p-8 rounded-xl border border-gray-800">
-      <div class="grid md:grid-cols-2 gap-6 mb-6">
-       <div><label for="nome" class="block text-sm font-medium mb-2">Nome Completo</label> <input type="text" id="nome" name="nome" required class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:border-red-400 focus:outline-none">
-       </div>
-       <div><label for="telefone" class="block text-sm font-medium mb-2">WhatsApp</label> <input type="tel" id="telefone" name="telefone" required placeholder="(11) 99999-9999" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:border-red-400 focus:outline-none">
-       </div>
-      </div>
-      <div class="mb-6"><label for="email" class="block text-sm font-medium mb-2">E-mail</label> <input type="email" id="email" name="email" required class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:border-red-400 focus:outline-none">
-      </div>
-      <div class="mb-6"><label for="interesse" class="block text-sm font-medium mb-2">Interesse</label> <select id="interesse" name="interesse" required class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:border-red-400 focus:outline-none"> <option value="">Selecione uma opção</option> <option value="Comprar carro novo">Comprar carro novo</option> <option value="Comprar carro seminovo">Comprar carro seminovo</option> <option value="Vender meu carro">Vender meu carro</option> <option value="Trocar meu carro">Trocar meu carro</option> <option value="Financiamento">Informações sobre financiamento</option> </select>
-      </div>
-      <div class="mb-6"><label for="mensagem" class="block text-sm font-medium mb-2">Mensagem</label> <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte-nos mais sobre seu interesse..." class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:border-red-400 focus:outline-none"></textarea>
-      </div><button type="submit" class="w-full gradient-blue text-white py-4 rounded-lg text-lg font-semibold hover:opacity-90 transition-opacity"> Enviar Solicitação </button>
-     </form>
-    </div>
-   </div>
-  </section><!-- CTA Final -->
-  <section class="py-20 bg-gradient-to-r from-red-600 via-red-500 to-red-600">
-   <div class="container mx-auto px-4 text-center">
-    <h2 class="text-4xl font-bold mb-4">Quer vender ou trocar seu carro?</h2>
-    <p class="text-xl mb-8">Fale com nossa equipe agora mesmo e faça a melhor negociação!</p><button onclick="openWhatsApp('CTA Final - Vender/Trocar')" class="bg-white text-red-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors"> <i class="fab fa-whatsapp mr-2"></i> Falar com Especialista </button>
-   </div>
-  </section><!-- Footer -->
-  <footer class="bg-black/30 backdrop-blur-sm border-t border-gray-800/50 py-12">
-   <div class="container mx-auto px-4">
-    <div class="grid md:grid-cols-4 gap-8">
-     <div>
-      <div class="flex items-center space-x-3 mb-4">
-       <div class="w-16 h-16 flex items-center justify-center"><img src="https://i.imgur.com/vNuK6vp.png" alt="Nery Veículos" class="w-full h-full object-contain" onerror="this.src=''; this.alt='Logo não disponível'; this.style.display='none';">
-       </div>
-       <div>
-        <h3 class="text-xl font-bold">NERY VEÍCULOS</h3>
-        <p class="text-xs text-gray-400">Seminovos &amp; Usados</p>
-       </div>
-      </div>
-      <p class="text-gray-400 text-sm">Realizando sonhos há mais de 10 anos com qualidade e confiança.</p>
-     </div>
-     <div>
-      <h4 class="font-semibold mb-4">Links Rápidos</h4>
-      <ul class="space-y-2 text-sm text-gray-400">
-       <li><a href="#home" class="hover:text-red-400 transition-colors">Home</a></li>
-       <li><a href="#estoque" class="hover:text-red-400 transition-colors">Estoque</a></li>
-       <li><a href="#financiamento" class="hover:text-red-400 transition-colors">Financiamento</a></li>
-       <li><a href="#contato" class="hover:text-red-400 transition-colors">Contato</a></li>
-      </ul>
-     </div>
-     <div>
-      <h4 class="font-semibold mb-4">Contato</h4>
-      <ul class="space-y-2 text-sm text-gray-400 mb-4">
-       <li><a href="tel:+5511985983781" onclick="trackClick('Phone Call', 'Footer')" class="hover:text-blue-400 transition-colors"> WhatsApp: (11) 98598-3781 </a></li>
-       <li><a href="mailto:neryveiculos10@gmail.com" onclick="trackClick('Email', 'Footer')" class="hover:text-blue-400 transition-colors"> Email: neryveiculos10@gmail.com </a></li>
-       <li>Endereço: Av Marginal 365</li>
-       <li>Jd Ouro Preto - Francisco Morato</li>
-      </ul>
-      <div class="mt-4"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.123456789!2d-46.7456789!3d-23.2789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDE2JzQ0LjAiUyA0NsKwNDQnNDQuNCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr" width="100%" height="120" style="border:0; border-radius: 8px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg shadow-lg"> </iframe>
-      </div>
-     </div>
-     <div>
-      <h4 class="font-semibold mb-4">Redes Sociais</h4>
-      <div class="flex space-x-4"><a href="https://instagram.com/neryveiculos_" target="_blank" rel="noopener noreferrer" onclick="trackClick('Instagram', 'Footer')" class="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg"> <i class="fab fa-instagram text-white text-lg"></i> </a>
-      </div>
-     </div>
-    </div>
-    <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-     <p>© 2025 AutoPrime Concessionária. Todos os direitos reservados.</p>
-    </div>
-   </div>
-  </footer><!-- Floating WhatsApp Button -->
-  <div class="floating-whatsapp"><button onclick="openWhatsApp('Floating Button')" class="w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center"> <i class="fab fa-whatsapp text-white text-2xl"></i> </button>
-  </div>
+  </footer><!-- WhatsApp Flutuante --> <a href="https://wa.me/5511985983781?text=Olá, tenho interesse em conhecer os veículos disponíveis!" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+   <svg viewbox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
+   </svg></a>
   <script>
-        // ===== SISTEMA DE RASTREAMENTO =====
-        
-        // Função para rastrear cliques
-        function trackClick(buttonType, location = '') {
-            const clickData = {
-                buttonType: buttonType,
-                location: location || window.location.pathname,
-                timestamp: new Date().toISOString(),
-                userAgent: navigator.userAgent,
-                referrer: document.referrer || 'Direct',
-                url: window.location.href
-            };
-            
-            // Enviar via postMessage se estiver em iframe
-            if (window.parent && window.parent !== window) {
-                window.parent.postMessage({
-                    type: 'TRACK_CLICK',
-                    data: clickData
-                }, '*');
-            }
-            
-            // Log local para debug
-            console.log('Click tracked:', clickData);
-        }
-        
-        // Função para rastrear leads
-        function trackLead(leadData) {
-            const enrichedLeadData = {
-                ...leadData,
-                timestamp: new Date().toISOString(),
-                userAgent: navigator.userAgent,
-                referrer: document.referrer || 'Direct',
-                currentPage: window.location.pathname,
-                url: window.location.href
-            };
-            
-            // Enviar via postMessage se estiver em iframe
-            if (window.parent && window.parent !== window) {
-                window.parent.postMessage({
-                    type: 'TRACK_LEAD',
-                    data: enrichedLeadData
-                }, '*');
-            }
-            
-            // Log local para debug
-            console.log('Lead tracked:', enrichedLeadData);
-        }
-        
-        // ===== FUNÇÕES ORIGINAIS COM RASTREAMENTO =====
-        
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-            
-            // Rastrear abertura do menu mobile
-            if (!menu.classList.contains('hidden')) {
-                trackClick('Mobile Menu', 'Header');
-            }
-        }
-        
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-            
-            // Rastrear navegação interna
-            trackClick('Internal Navigation', `Scroll to ${sectionId}`);
-        }
-        
-        function openWhatsApp(source = 'Generic') {
-            // Rastrear clique no WhatsApp
-            trackClick('WhatsApp Button', source);
-            
-            const message = "🚗 Olá! Tenho interesse nos veículos da NERY VEÍCULOS. Gostaria de mais informações sobre estoque, financiamento e condições especiais.";
-            const whatsappUrl = `https://wa.me/5511985983781?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-        }
-        
-        function requestQuote(carModel) {
-            // Rastrear consulta de veículo específico
-            trackClick('Vehicle Consultation', `${carModel} - Estoque`);
-            
-            const message = `Olá! Tenho interesse no ${carModel}. Gostaria de mais informações sobre preço, financiamento e disponibilidade.`;
-            const whatsappUrl = `https://wa.me/5511985983781?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-        }
-        
-        function submitForm(event) {
-            event.preventDefault();
-            
-            const formData = new FormData(event.target);
-            const nome = formData.get('nome');
-            const telefone = formData.get('telefone');
-            const email = formData.get('email');
-            const interesse = formData.get('interesse');
-            const mensagem = formData.get('mensagem');
-            
-            // Rastrear lead do formulário
-            trackLead({
-                name: nome,
-                phone: telefone,
-                email: email,
-                interest: interesse,
-                message: mensagem,
-                source: 'Formulário de Contato'
-            });
-            
-            const whatsappMessage = `*Nova Solicitação - Nery Veículos*
-            
-👤 *Nome:* ${nome}
-📱 *WhatsApp:* ${telefone}
-📧 *E-mail:* ${email}
-🎯 *Interesse:* ${interesse}
-💬 *Mensagem:* ${mensagem || 'Não informado'}
+    const defaultConfig = {
+      store_name: "Nery Veículos – Seminovos e Usados",
+      store_location: "Av. Marginal 365, JD Ouro Preto - Fco Morato",
+      vehicle_name: "Hyundai HB20",
+      vehicle_version: "HB20 1.0 FLEX – 2021",
+      vehicle_price: "R$ 63.900,00",
+      whatsapp_number: "5511985983781",
+      vehicle_description: "Hyundai HB20 1.0 Flex 2021 em excelente estado de conservação. Veículo econômico e confiável, perfeito para o dia a dia na cidade.",
+      cta_button_text: "Chamar no WhatsApp",
+      cta_secondary_text: "Quero falar com a Nery Veículos no WhatsApp",
+      primary_color: "#25d366",
+      secondary_color: "#667eea",
+      text_color: "#2c3e50",
+      background_color: "#f8f9fa",
+      card_background: "#ffffff"
+    };
 
-Aguardo retorno para mais informações!`;
-            
-            const whatsappUrl = `https://wa.me/5511985983781?text=${encodeURIComponent(whatsappMessage)}`;
-            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-            
-            // Show success message
-            const successMessage = document.createElement('div');
-            successMessage.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
-            successMessage.textContent = 'Solicitação enviada! Nossa equipe entrará em contato em breve.';
-            document.body.appendChild(successMessage);
-            
-            setTimeout(() => {
-                successMessage.remove();
-            }, 5000);
-            
-            // Reset form
-            event.target.reset();
+    async function onConfigChange(config) {
+      const storeName = config.store_name || defaultConfig.store_name;
+      const storeLocation = config.store_location || defaultConfig.store_location;
+      const vehicleName = config.vehicle_name || defaultConfig.vehicle_name;
+      const vehicleVersion = config.vehicle_version || defaultConfig.vehicle_version;
+      const vehiclePrice = config.vehicle_price || defaultConfig.vehicle_price;
+      const whatsappNumber = config.whatsapp_number || defaultConfig.whatsapp_number;
+      const vehicleDescription = config.vehicle_description || defaultConfig.vehicle_description;
+      const ctaButtonText = config.cta_button_text || defaultConfig.cta_button_text;
+      const ctaSecondaryText = config.cta_secondary_text || defaultConfig.cta_secondary_text;
+      const primaryColor = config.primary_color || defaultConfig.primary_color;
+      const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const backgroundColor = config.background_color || defaultConfig.background_color;
+      const cardBackground = config.card_background || defaultConfig.card_background;
+
+
+      document.getElementById('vehicle-name').textContent = vehicleName;
+      document.getElementById('vehicle-version').textContent = vehicleVersion;
+      document.getElementById('vehicle-price').textContent = vehiclePrice;
+      document.getElementById('vehicle-description').textContent = vehicleDescription;
+      document.getElementById('cta-primary').textContent = ctaButtonText;
+      document.getElementById('cta-secondary').textContent = ctaSecondaryText;
+
+      const whatsappMessage = encodeURIComponent('Olá, tenho interesse nesse veículo que vi no site.');
+      const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+      document.getElementById('cta-primary').href = whatsappLink;
+      document.getElementById('cta-secondary').href = whatsappLink;
+      document.getElementById('cta-financing').href = whatsappLink;
+
+      document.body.style.background = backgroundColor;
+      document.body.style.color = textColor;
+      
+      const ctaButtons = document.querySelectorAll('.cta-button');
+      ctaButtons.forEach(btn => {
+        if (btn.id === 'cta-financing') {
+          btn.style.background = cardBackground;
+          btn.style.color = secondaryColor;
+        } else {
+          btn.style.background = primaryColor;
         }
-        
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const mobileMenu = document.getElementById('mobileMenu');
-            const menuButton = event.target.closest('button');
-            
-            if (!mobileMenu.contains(event.target) && !menuButton?.onclick?.toString().includes('toggleMobileMenu')) {
-                mobileMenu.classList.add('hidden');
+      });
+
+      const optionalIcons = document.querySelectorAll('.optional-icon');
+      optionalIcons.forEach(icon => {
+        icon.style.background = primaryColor;
+      });
+
+      const priceElement = document.querySelector('.price');
+      priceElement.style.color = primaryColor;
+
+      const financingSection = document.querySelector('.financing');
+      financingSection.style.background = `linear-gradient(135deg, #2196F3 0%, #1976D2 100%)`;
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.primary_color || defaultConfig.primary_color,
+              set: (value) => {
+                config.primary_color = value;
+                window.elementSdk.setConfig({ primary_color: value });
+              }
+            },
+            {
+              get: () => config.secondary_color || defaultConfig.secondary_color,
+              set: (value) => {
+                config.secondary_color = value;
+                window.elementSdk.setConfig({ secondary_color: value });
+              }
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            },
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => {
+                config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            },
+            {
+              get: () => config.card_background || defaultConfig.card_background,
+              set: (value) => {
+                config.card_background = value;
+                window.elementSdk.setConfig({ card_background: value });
+              }
             }
+          ],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ["store_location", config.store_location || defaultConfig.store_location],
+          ["vehicle_name", config.vehicle_name || defaultConfig.vehicle_name],
+          ["vehicle_version", config.vehicle_version || defaultConfig.vehicle_version],
+          ["vehicle_price", config.vehicle_price || defaultConfig.vehicle_price],
+          ["whatsapp_number", config.whatsapp_number || defaultConfig.whatsapp_number],
+          ["vehicle_description", config.vehicle_description || defaultConfig.vehicle_description],
+          ["cta_button_text", config.cta_button_text || defaultConfig.cta_button_text],
+          ["cta_secondary_text", config.cta_secondary_text || defaultConfig.cta_secondary_text]
+        ])
+      });
+    }
+
+
+
+    // Thumbnail gallery functionality
+    const mainImage = document.getElementById('main-image');
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    
+    const imageData = [
+      {
+        image: 'https://i.imgur.com/B3RpTft.jpg',
+        label: 'Foto Principal'
+      },
+      {
+        image: 'https://i.imgur.com/ebYmbmp.jpg',
+        label: 'Vista Lateral'
+      },
+      {
+        image: 'https://i.imgur.com/k3HUN52.jpg',
+        label: 'Rodas'
+      },
+      {
+        image: 'https://i.imgur.com/5b8wkP3.jpg',
+        label: 'Interior'
+      }
+    ];
+
+    function changeMainImage(imageIndex) {
+      const imageInfo = imageData[imageIndex];
+      mainImage.innerHTML = `
+        <img src="${imageInfo.image}" alt="${imageInfo.label}" 
+             style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div style="position: absolute; font-size: 0.9rem; color: #6c757d; margin-top: 100px; display: none;">
+          ${imageInfo.label} - Imagem não disponível
+        </div>
+      `;
+      
+      // Update active thumbnail
+      thumbnails.forEach((thumb, index) => {
+        thumb.classList.toggle('active', index === imageIndex);
+      });
+    }
+
+    // Add click listeners to thumbnails
+    thumbnails.forEach((thumbnail, index) => {
+      thumbnail.addEventListener('click', () => {
+        changeMainImage(index);
+      });
+    });
+
+    // Mobile menu functionality
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (hamburgerBtn && mobileMenu) {
+      hamburgerBtn.addEventListener('click', () => {
+        hamburgerBtn.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+      });
+
+      // Close menu when clicking on a link
+      const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+      mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          hamburgerBtn.classList.remove('active');
+          mobileMenu.classList.remove('active');
         });
-        
-        // Carrossel de Veículos
-        let currentCarIndex = 0;
-        const totalCars = 3;
-        
-        function updateCarousel() {
-            const carousel = document.getElementById('carCarousel');
-            const translateX = -currentCarIndex * 100;
-            carousel.style.transform = `translateX(${translateX}%)`;
-            
-            // Atualizar indicadores
-            const indicators = document.querySelectorAll('.car-indicator');
-            indicators.forEach((indicator, index) => {
-                if (index === currentCarIndex) {
-                    indicator.classList.remove('bg-gray-600');
-                    indicator.classList.add('bg-blue-400');
-                } else {
-                    indicator.classList.remove('bg-blue-400');
-                    indicator.classList.add('bg-gray-600');
-                }
-            });
-        }
-        
-        function nextCar() {
-            currentCarIndex = (currentCarIndex + 1) % totalCars;
-            updateCarousel();
-            trackClick('Carousel Navigation', 'Next Car');
-        }
-        
-        function previousCar() {
-            currentCarIndex = (currentCarIndex - 1 + totalCars) % totalCars;
-            updateCarousel();
-            trackClick('Carousel Navigation', 'Previous Car');
-        }
-        
-        function goToCar(index) {
-            currentCarIndex = index;
-            updateCarousel();
-            trackClick('Carousel Navigation', `Go to Car ${index + 1}`);
-        }
-        
-        // Auto-play do carrossel (opcional)
-        setInterval(nextCar, 5000); // Muda automaticamente a cada 5 segundos
-        
-        // Banner Navigation Functions
-        let currentBannerIndex = 0;
-        const bannerImages = document.querySelectorAll('.banner-image-container');
-        const totalBannerImages = bannerImages.length;
-        
-        function changeBannerImage(direction) {
-            // Remove all classes from all images
-            bannerImages.forEach(img => {
-                img.classList.remove('active', 'prev');
-            });
-            
-            // Calculate next index
-            const prevIndex = currentBannerIndex;
-            if (direction === 'next') {
-                currentBannerIndex = (currentBannerIndex + 1) % totalBannerImages;
-            } else {
-                currentBannerIndex = (currentBannerIndex - 1 + totalBannerImages) % totalBannerImages;
-            }
-            
-            // Set classes for slide effect
-            bannerImages[prevIndex].classList.add('prev');
-            bannerImages[currentBannerIndex].classList.add('active');
-            
-            // Reset non-active images to default position after transition
-            setTimeout(() => {
-                bannerImages.forEach((img, index) => {
-                    if (index !== currentBannerIndex) {
-                        img.classList.remove('prev');
-                    }
-                });
-            }, 800);
-            
-            // Track banner navigation
-            trackClick('Banner Navigation', direction);
-        }
-        
-        // Auto-change banner images every 4 seconds
-        setInterval(() => {
-            changeBannerImage('next');
-        }, 4000);
-        
-        // Navbar transparency on scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            const scrollPosition = window.scrollY;
-            
-            if (scrollPosition > 100) {
-                navbar.classList.remove('bg-black/95');
-                navbar.classList.add('bg-black/20');
-                navbar.classList.remove('border-gray-800');
-                navbar.classList.add('border-gray-800/30');
-            } else {
-                navbar.classList.remove('bg-black/20');
-                navbar.classList.add('bg-black/95');
-                navbar.classList.remove('border-gray-800/30');
-                navbar.classList.add('border-gray-800');
-            }
-        });
-        
-        // ===== RASTREAMENTO AUTOMÁTICO DE EVENTOS =====
-        
-        // Rastrear tempo na página
-        let pageStartTime = Date.now();
-        
-        window.addEventListener('beforeunload', function() {
-            const timeOnPage = Math.round((Date.now() - pageStartTime) / 1000);
-            trackClick('Page Exit', `Time on page: ${timeOnPage}s`);
-        });
-        
-        // Rastrear scroll depth
-        let maxScrollDepth = 0;
-        
-        window.addEventListener('scroll', function() {
-            const scrollDepth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
-            if (scrollDepth > maxScrollDepth) {
-                maxScrollDepth = scrollDepth;
-                
-                // Rastrear marcos de scroll
-                if (maxScrollDepth >= 25 && maxScrollDepth < 50) {
-                    trackClick('Scroll Depth', '25%');
-                } else if (maxScrollDepth >= 50 && maxScrollDepth < 75) {
-                    trackClick('Scroll Depth', '50%');
-                } else if (maxScrollDepth >= 75 && maxScrollDepth < 90) {
-                    trackClick('Scroll Depth', '75%');
-                } else if (maxScrollDepth >= 90) {
-                    trackClick('Scroll Depth', '90%');
-                }
-            }
-        });
-        
-        // Rastrear carregamento da página
-        window.addEventListener('load', function() {
-            trackClick('Page Load', 'Complete');
-        });
-        
-        // Rastrear origem do tráfego
-        document.addEventListener('DOMContentLoaded', function() {
-            const referrer = document.referrer;
-            let trafficSource = 'Direct';
-            
-            if (referrer) {
-                if (referrer.includes('google')) trafficSource = 'Google';
-                else if (referrer.includes('facebook')) trafficSource = 'Facebook';
-                else if (referrer.includes('instagram')) trafficSource = 'Instagram';
-                else if (referrer.includes('whatsapp')) trafficSource = 'WhatsApp';
-                else trafficSource = 'Referral';
-            }
-            
-            trackClick('Traffic Source', trafficSource);
-        });
-    </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'999b574fe431cd6d',t:'MTc2MjMzNTExNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+      });
+    }
+
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99ac2d0af49bf1af',t:'MTc2MjUxMTY0My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
